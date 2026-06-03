@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Meu Aniversário 🌸">
+<meta name="theme-color" content="#f9e4ec">
+<title>🌸 Meu Brunch de 23 Anos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #e8728a;
+    --rose-light: #f9e4ec;
+    --rose-mid: #f2c4d4;
+    --rose-deep: #c44e6a;
+    --peach: #f5c4a0;
+    --sage: #b8cbb0;
+    --sage-deep: #7a9e70;
+    --lavender: #d4c5e8;
+    --cream: #fdf8f0;
+    --text: #3a2a2e;
+    --text-muted: #8a7278;
+    --white: #ffffff;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    max-width: 430px;
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* FLORAL DECORATIONS */
+  .floral-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 280px;
+    background: linear-gradient(160deg, #fce8f0 0%, #f9d5e6 40%, #f0e8f8 100%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .petal {
+    position: absolute;
+    border-radius: 50% 0 50% 0;
+    opacity: 0.35;
+    animation: float 6s ease-in-out infinite;
+  }
+  .petal:nth-child(1) { width:40px;height:40px;background:#e8728a;top:20px;left:15px;animation-delay:0s; }
+  .petal:nth-child(2) { width:25px;height:25px;background:#d4c5e8;top:60px;left:50px;animation-delay:1s;border-radius:0 50% 0 50%; }
+  .petal:nth-child(3) { width:35px;height:35px;background:#f5c4a0;top:30px;right:30px;animation-delay:2s; }
+  .petal:nth-child(4) { width:20px;height:20px;background:#b8cbb0;top:80px;right:70px;animation-delay:0.5s;border-radius:0 50% 0 50%; }
+  .petal:nth-child(5) { width:30px;height:30px;background:#f2c4d4;top:10px;left:50%;animation-delay:3s; }
+  .petal:nth-child(6) { width:22px;height:22px;background:#c44e6a;top:100px;left:30%;animation-delay:1.5s;border-radius:0 50% 0 50%; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(5deg); }
+  }
+
+  /* HEADER */
+  header {
+    position: relative;
+    z-index: 1;
+    padding: 52px 24px 20px;
+    text-align: center;
+  }
+
+  .event-datetime {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .event-date-pill, .event-time-pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: white;
+    border: 1.5px solid var(--rose-mid);
+    border-radius: 30px;
+    padding: 7px 16px;
+    box-shadow: 0 2px 10px rgba(232,114,138,0.13);
+  }
+
+  .event-date-pill .pill-icon,
+  .event-time-pill .pill-icon {
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .event-date-pill .pill-text,
+  .event-time-pill .pill-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--rose-deep);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .event-time-pill {
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    border-color: transparent;
+  }
+
+  .event-time-pill .pill-text {
+    color: white;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--rose-deep);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  header p {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 0 20px 20px;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 12px 8px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(232,114,138,0.12);
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--rose);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* NAV TABS */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    border-bottom: 1px solid #f0e0e8;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 16px;
+    gap: 4px;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 14px 12px 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-btn.active {
+    color: var(--rose-deep);
+    border-bottom-color: var(--rose);
+  }
+
+  /* MAIN CONTENT */
+  main {
+    padding: 20px;
+    padding-bottom: 40px;
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--rose-deep);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title span { font-size: 20px; }
+
+  /* CARD BASE */
+  .card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(232,114,138,0.08);
+    border: 1px solid rgba(232,114,138,0.1);
+  }
+
+  /* FORM */
+  .form-group { margin-bottom: 12px; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  input[type="text"], input[type="number"], input[type="url"], select, textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #f0e0e8;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--rose);
+    background: white;
+  }
+
+  textarea { resize: vertical; min-height: 70px; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--rose);
+    color: white;
+    width: 100%;
+    justify-content: center;
+    padding: 13px;
+    font-size: 14px;
+  }
+  .btn-primary:active { transform: scale(0.98); background: var(--rose-deep); }
+
+  .btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .btn-confirm {
+    background: #e8f5e0;
+    color: var(--sage-deep);
+    border: 1px solid var(--sage);
+  }
+
+  .btn-confirmed {
+    background: var(--sage-deep);
+    color: white;
+  }
+
+  .btn-delete {
+    background: #fce8ec;
+    color: var(--rose-deep);
+    border: 1px solid var(--rose-mid);
+  }
+
+  /* GUEST CARD */
+  .guest-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 6px rgba(232,114,138,0.08);
+    border: 1px solid rgba(232,114,138,0.1);
+  }
+
+  .guest-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rose-light), var(--lavender));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--rose-deep);
+    flex-shrink: 0;
+  }
+
+  .guest-info { flex: 1; min-width: 0; }
+  .guest-name {
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .guest-tag {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .confirmed-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  .badge-yes { background: #e8f5e0; color: var(--sage-deep); }
+  .badge-no { background: #fce8ec; color: var(--rose-deep); }
+  .badge-pending { background: #f5f0fe; color: #7c5cbf; }
+
+  .guest-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
+  /* COST CARD */
+  .cost-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 6px rgba(232,114,138,0.08);
+    border: 1px solid rgba(232,114,138,0.1);
+  }
+
+  .cost-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .cost-info { flex: 1; }
+  .cost-name { font-size: 14px; font-weight: 500; }
+  .cost-cat { font-size: 11px; color: var(--text-muted); }
+  .cost-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--rose-deep);
+    flex-shrink: 0;
+  }
+
+  .cost-total-bar {
+    background: linear-gradient(135deg, var(--rose), #d4c5e8);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+    color: white;
+  }
+  .cost-total-label { font-size: 11px; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.05em; }
+  .cost-total-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+  }
+  .progress-bar {
+    background: #f0e0e8;
+    border-radius: 6px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--rose), var(--rose-deep));
+    border-radius: 6px;
+    transition: width 0.5s ease;
+  }
+
+  /* INSPIRATION */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .photo-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--rose-light);
+    cursor: pointer;
+    border: 1.5px dashed var(--rose-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    transition: all 0.2s;
+  }
+
+  .photo-item.has-photo {
+    border: none;
+    background: none;
+  }
+
+  .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-item .add-icon {
+    font-size: 28px;
+    color: var(--rose);
+  }
+
+  .photo-item .add-text {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 0 8px;
+  }
+
+  .photo-item:hover { border-color: var(--rose); }
+
+  .photo-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.5));
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .photo-item.has-photo:hover .photo-overlay { opacity: 1; }
+
+  .photo-note {
+    color: white;
+    font-size: 11px;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .photo-delete-btn {
+    background: rgba(255,255,255,0.3);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo-input-url {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+  }
+
+  /* CHECKLIST */
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: white;
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    border: 1px solid rgba(232,114,138,0.1);
+    box-shadow: 0 1px 6px rgba(232,114,138,0.06);
+    transition: opacity 0.3s;
+  }
+
+  .checklist-item.done { opacity: 0.5; }
+  .checklist-item.done .check-text { text-decoration: line-through; }
+
+  .check-box {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid var(--rose-mid);
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background: white;
+    color: white;
+    font-size: 13px;
+  }
+
+  .check-box.checked {
+    background: var(--rose);
+    border-color: var(--rose);
+  }
+
+  .check-text { flex: 1; font-size: 14px; }
+
+  /* PALETA / MOOD */
+  .mood-colors {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .color-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    position: relative;
+  }
+
+  .color-swatch::after {
+    content: attr(data-name);
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  /* DECORATIVE DIVIDER */
+  .floral-divider {
+    text-align: center;
+    color: var(--rose-mid);
+    font-size: 18px;
+    margin: 16px 0;
+    letter-spacing: 6px;
+  }
+
+  /* EMPTY STATE */
+  .empty-state {
+    text-align: center;
+    padding: 32px 20px;
+    color: var(--text-muted);
+  }
+  .empty-state .emoji { font-size: 40px; margin-bottom: 10px; }
+  .empty-state p { font-size: 13px; }
+
+  /* NOTIFICATION */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--rose-deep);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(196,78,106,0.3);
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(58,42,46,0.5);
+    z-index: 200;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal-sheet {
+    background: var(--cream);
+    border-radius: 24px 24px 0 0;
+    padding: 20px;
+    width: 100%;
+    max-width: 430px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .modal-handle {
+    width: 40px;
+    height: 4px;
+    background: var(--rose-mid);
+    border-radius: 2px;
+    margin: 0 auto 20px;
+  }
+
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--rose-deep);
+    margin-bottom: 16px;
+  }
+
+  /* TAG SELECTOR */
+  .tag-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .tag-opt {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1.5px solid var(--rose-mid);
+    background: white;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tag-opt.selected { background: var(--rose); color: white; border-color: var(--rose); }
+
+  /* CATEGORY BADGE */
+  .cat-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .cat-comida { background: #fff3e0; color: #e65100; }
+  .cat-decoracao { background: #fce4ec; color: var(--rose-deep); }
+  .cat-local { background: #e8f5e9; color: #2e7d32; }
+  .cat-bebida { background: #e3f2fd; color: #1565c0; }
+  .cat-roupa { background: #f3e5f5; color: #6a1b9a; }
+  .cat-musica { background: #fff8e1; color: #f57f17; }
+  .cat-outro { background: #f5f5f5; color: #616161; }
+
+  .paid-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .paid-yes { background: #e8f5e0; color: var(--sage-deep); }
+  .paid-no { background: #fce8ec; color: var(--rose-deep); }
+
+  /* INSPIRAÇÕES TEMA */
+  .inspo-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 3px;
+    background: var(--rose-light);
+    color: var(--rose-deep);
+    border: 1px solid var(--rose-mid);
+  }
+
+  /* BUDGET CATEGORIES */
+  .budget-cat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(232,114,138,0.08);
+  }
+  .budget-cat:last-child { border: none; }
+  .budget-cat-icon { font-size: 18px; width: 28px; text-align: center; }
+  .budget-cat-name { flex: 1; font-size: 13px; color: var(--text-muted); }
+  .budget-cat-val { font-size: 13px; font-weight: 500; color: var(--text); }
+  .budget-cat-bar-wrap { width: 60px; height: 6px; background: #f0e0e8; border-radius: 3px; overflow: hidden; }
+  .budget-cat-bar { height: 100%; border-radius: 3px; background: var(--rose); }
+
+  /* PHOTO URL INPUT */
+  input[type="file"] { display: none; }
+
+</style>
+</head>
+<body>
+
+<div class="floral-bg">
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+</div>
+
+<header>
+  <div class="event-datetime">
+    <div class="event-date-pill">
+      <span class="pill-icon">🗓</span>
+      <span class="pill-text" id="event-date-text">21 de junho de 2026</span>
+    </div>
+    <div class="event-time-pill">
+      <span class="pill-icon">🕓</span>
+      <span class="pill-text" id="event-time-text">16h00</span>
+    </div>
+  </div>
+  <h1>Meu Brunch<br><em>de 23 Anos</em> 🌸</h1>
+  <p>florido, delicioso & inesquecível</p>
+</header>
+
+<div class="stats-bar">
+  <div class="stat-card">
+    <span class="stat-num" id="stat-total">0</span>
+    <span class="stat-label">Convidados</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-num" id="stat-confirmed">0</span>
+    <span class="stat-label">Confirmados</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-num" id="stat-cost">R$0</span>
+    <span class="stat-label">Custos</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <button class="nav-btn active" onclick="showTab('info')">📋 Evento</button>
+  <button class="nav-btn" onclick="showTab('guests')">🌸 Convidados</button>
+  <button class="nav-btn" onclick="showTab('costs')">💸 Custos</button>
+  <button class="nav-btn" onclick="showTab('checklist')">✅ Tarefas</button>
+  <button class="nav-btn" onclick="showTab('musica')">🎵 Música</button>
+  <button class="nav-btn" onclick="showTab('inspo')">🎨 Inspirações</button>
+</nav>
+
+<main>
+
+  <!-- INFO TAB -->
+  <div class="tab-content active" id="tab-info">
+    <p class="section-title"><span>🌺</span> Detalhes do Evento</p>
+
+    <div class="card">
+      <div class="form-group">
+        <label>Data da festa</label>
+        <input type="date" id="evt-date" oninput="saveInfo()">
+      </div>
+      <div class="form-group">
+        <label>Horário</label>
+        <input type="time" id="evt-time" oninput="saveInfo()">
+      </div>
+      <div class="form-group">
+        <label>Local</label>
+        <input type="text" id="evt-local" placeholder="Ex: Casa da vovó, Sítio das Flores..." oninput="saveInfo()">
+      </div>
+      <div class="form-group">
+        <label>Endereço</label>
+        <input type="text" id="evt-addr" placeholder="Rua, número, cidade..." oninput="saveInfo()">
+      </div>
+      <div class="form-group">
+        <label>Tema / Dress code</label>
+        <input type="text" id="evt-theme" placeholder="Ex: Brunch florido, tons rosê..." oninput="saveInfo()">
+      </div>
+      <div class="form-group">
+        <label>Observações</label>
+        <textarea id="evt-obs" placeholder="Músicas, menu, desejos..." oninput="saveInfo()"></textarea>
+      </div>
+    </div>
+
+    <div class="floral-divider">❀ ❀ ❀</div>
+
+    <p class="section-title"><span>🎨</span> Paleta de Cores</p>
+    <div class="card">
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">Paleta sugerida para o brunch florido:</p>
+      <div class="mood-colors">
+        <div class="color-swatch" style="background:#e8728a" data-name="Rosê"></div>
+        <div class="color-swatch" style="background:#f5c4a0" data-name="Pêssego"></div>
+        <div class="color-swatch" style="background:#d4c5e8" data-name="Lavanda"></div>
+        <div class="color-swatch" style="background:#b8cbb0" data-name="Sage"></div>
+        <div class="color-swatch" style="background:#fdf8f0" data-name="Creme"></div>
+        <div class="color-swatch" style="background:#c44e6a" data-name="Framboesa"></div>
+      </div>
+      <div style="margin-top:36px;"></div>
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">Tags de inspiração:</p>
+      <div>
+        <span class="inspo-tag">Brunch Florido</span>
+        <span class="inspo-tag">Tons Rosê</span>
+        <span class="inspo-tag">Flores Naturais</span>
+        <span class="inspo-tag">Luz Natural</span>
+        <span class="inspo-tag">Espelho Vintage</span>
+        <span class="inspo-tag">Flores Secas</span>
+        <span class="inspo-tag">Mesa Farta</span>
+        <span class="inspo-tag">Bolo de Flores</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUESTS TAB -->
+  <div class="tab-content" id="tab-guests">
+    <p class="section-title"><span>🌸</span> Lista de Convidados</p>
+
+    <div class="card">
+      <div class="form-group">
+        <label>Nome</label>
+        <input type="text" id="g-name" placeholder="Nome do convidado">
+      </div>
+      <div class="form-group">
+        <label>Contato (opcional)</label>
+        <input type="text" id="g-contact" placeholder="@instagram, número...">
+      </div>
+      <div class="form-group">
+        <label>Grupo</label>
+        <div class="tag-options" id="group-options">
+          <div class="tag-opt selected" data-val="amigos" onclick="selectTag(this,'group-options')">Amigos</div>
+          <div class="tag-opt" data-val="familia" onclick="selectTag(this,'group-options')">Família</div>
+          <div class="tag-opt" data-val="trabalho" onclick="selectTag(this,'group-options')">Trabalho</div>
+          <div class="tag-opt" data-val="faculdade" onclick="selectTag(this,'group-options')">Faculdade</div>
+          <div class="tag-opt" data-val="outros" onclick="selectTag(this,'group-options')">Outros</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="addGuest()">+ Adicionar Convidado</button>
+    </div>
+
+    <!-- FILTER -->
+    <div style="display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;">
+      <button class="tag-opt selected" style="flex-shrink:0" id="f-all" onclick="filterGuests('all')">Todos</button>
+      <button class="tag-opt" style="flex-shrink:0" id="f-confirmed" onclick="filterGuests('confirmed')">✅ Confirmados</button>
+      <button class="tag-opt" style="flex-shrink:0" id="f-pending" onclick="filterGuests('pending')">⏳ Aguardando</button>
+      <button class="tag-opt" style="flex-shrink:0" id="f-no" onclick="filterGuests('no')">❌ Não vai</button>
+    </div>
+
+    <div id="guest-list"></div>
+    <div id="guest-empty" class="empty-state" style="display:none">
+      <div class="emoji">🌺</div>
+      <p>Nenhum convidado ainda.<br>Adicione os primeiros!</p>
+    </div>
+  </div>
+
+  <!-- COSTS TAB -->
+  <div class="tab-content" id="tab-costs">
+    <div class="cost-total-bar">
+      <div class="cost-total-label">Total estimado</div>
+      <div class="cost-total-value" id="total-display">R$ 0,00</div>
+    </div>
+
+    <!-- BUDGET GOAL -->
+    <div class="card" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+        <span style="font-size:13px;font-weight:500;">Meta de orçamento</span>
+        <input type="number" id="budget-goal" placeholder="Ex: 500" style="width:110px;text-align:right;padding:6px 10px;font-size:13px;" oninput="saveCostData();renderBudgetProgress()" min="0">
+      </div>
+      <div class="progress-label">
+        <span>Gasto: <span id="prog-spent">R$0</span></span>
+        <span>Meta: <span id="prog-goal">R$0</span></span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+    </div>
+
+    <p class="section-title"><span>💐</span> Adicionar Gasto</p>
+    <div class="card">
+      <div class="form-group">
+        <label>Descrição</label>
+        <input type="text" id="c-name" placeholder="Ex: Flores para decoração">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div class="form-group">
+          <label>Valor (R$)</label>
+          <input type="number" id="c-value" placeholder="0,00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label>Situação</label>
+          <select id="c-paid">
+            <option value="pendente">A pagar</option>
+            <option value="pago">Pago ✅</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Categoria</label>
+        <div class="tag-options" id="cat-options">
+          <div class="tag-opt selected" data-val="comida" onclick="selectTag(this,'cat-options')">🍓 Comida</div>
+          <div class="tag-opt" data-val="bebida" onclick="selectTag(this,'cat-options')">🥂 Bebida</div>
+          <div class="tag-opt" data-val="decoracao" onclick="selectTag(this,'cat-options')">🌸 Decoração</div>
+          <div class="tag-opt" data-val="local" onclick="selectTag(this,'cat-options')">🏡 Local</div>
+          <div class="tag-opt" data-val="roupa" onclick="selectTag(this,'cat-options')">👗 Roupa</div>
+          <div class="tag-opt" data-val="musica" onclick="selectTag(this,'cat-options')">🎵 Música</div>
+          <div class="tag-opt" data-val="outro" onclick="selectTag(this,'cat-options')">📦 Outro</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="addCost()">+ Adicionar Gasto</button>
+    </div>
+
+    <!-- CAT BREAKDOWN -->
+    <div class="card" id="breakdown-card" style="display:none">
+      <p style="font-size:13px;font-weight:500;margin-bottom:12px;color:var(--text-muted);">Por categoria</p>
+      <div id="budget-breakdown"></div>
+    </div>
+
+    <p class="section-title" style="margin-top:4px;"><span>💰</span> Gastos</p>
+    <div id="cost-list"></div>
+    <div id="cost-empty" class="empty-state" style="display:none">
+      <div class="emoji">💸</div>
+      <p>Nenhum gasto registrado ainda.</p>
+    </div>
+  </div>
+
+  <!-- CHECKLIST TAB -->
+  <div class="tab-content" id="tab-checklist">
+    <p class="section-title"><span>✅</span> Lista de Tarefas</p>
+
+    <div class="card">
+      <div style="display:flex;gap:8px;">
+        <input type="text" id="task-input" placeholder="Nova tarefa..." style="flex:1;" onkeydown="if(event.key==='Enter')addTask()">
+        <button class="btn btn-primary" style="width:auto;padding:10px 18px;" onclick="addTask()">+</button>
+      </div>
+    </div>
+
+    <div id="task-list"></div>
+    <div id="task-empty" class="empty-state" style="display:none">
+      <div class="emoji">🌼</div>
+      <p>Nenhuma tarefa ainda.<br>Organize tudo aqui!</p>
+    </div>
+  </div>
+
+  <!-- MÚSICA TAB -->
+  <div class="tab-content" id="tab-musica">
+    <p class="section-title"><span>🎵</span> Playlist do Aniversário</p>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">Cole o link da sua playlist do Spotify e ela vai aparecer aqui para tocar direto! 🎶</p>
+
+    <div class="card" style="margin-bottom:16px;">
+      <div class="form-group">
+        <label>Link da Playlist do Spotify</label>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input type="url" id="spotify-url" placeholder="https://open.spotify.com/playlist/..." style="flex:1;" oninput="saveSpotify()">
+          <button class="btn btn-primary" style="width:auto;padding:10px 16px;white-space:nowrap;background:#1DB954;" onclick="embedSpotify()">▶ Carregar</button>
+        </div>
+      </div>
+      <p style="font-size:11px;color:var(--text-muted);margin-top:-4px;">Cole a URL da playlist, álbum ou música do Spotify</p>
+    </div>
+
+    <div id="spotify-embed-wrap" style="display:none;margin-bottom:16px;">
+      <div style="border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(29,185,84,0.15);">
+        <iframe id="spotify-iframe"
+          style="border-radius:var(--radius);"
+          src=""
+          width="100%"
+          height="380"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+      <button onclick="clearSpotify()" style="margin-top:10px;background:none;border:1.5px solid var(--rose-mid);color:var(--text-muted);border-radius:var(--radius-sm);padding:8px 16px;font-size:12px;cursor:pointer;width:100%;">✕ Remover playlist</button>
+    </div>
+
+    <div id="spotify-empty" class="empty-state">
+      <div class="emoji">🎧</div>
+      <p>Nenhuma playlist adicionada ainda.<br>Cole o link do Spotify acima!</p>
+    </div>
+
+    <div class="floral-divider">❀ ❀ ❀</div>
+    <p class="section-title"><span>💡</span> Dicas de Playlist</p>
+    <div class="card">
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">Pesquise no Spotify por:</p>
+      <div>
+        <span class="inspo-tag">Brunch Vibes</span>
+        <span class="inspo-tag">Garden Party</span>
+        <span class="inspo-tag">Chill Morning</span>
+        <span class="inspo-tag">Feel Good Pop</span>
+        <span class="inspo-tag">Bossa Nova</span>
+        <span class="inspo-tag">Indie Romântico</span>
+        <span class="inspo-tag">Lofi Festa</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSPO TAB -->
+  <div class="tab-content" id="tab-inspo">
+    <p class="section-title"><span>🎨</span> Mural de Inspirações</p>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">Adicione fotos e links para montar o mood board do seu brunch florido ✨</p>
+
+    <div class="card" style="margin-bottom:16px;">
+      <div class="form-group">
+        <label>URL da imagem ou foto</label>
+        <div style="display:flex;gap:8px;">
+          <input type="text" id="img-url" placeholder="https://...imagem.jpg" style="flex:1;">
+          <button class="btn btn-primary" style="width:auto;padding:10px 14px;white-space:nowrap;" onclick="addPhoto()">+ Add</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Nota (opcional)</label>
+        <input type="text" id="img-note" placeholder="Ex: Ideia para o bolo, arranjo de flores...">
+      </div>
+    </div>
+
+    <div class="photo-grid" id="photo-grid"></div>
+
+    <div id="photo-empty" class="empty-state" style="display:none">
+      <div class="emoji">🌺</div>
+      <p>Adicione fotos de inspiração<br>para montar seu mood board!</p>
+    </div>
+
+    <div class="floral-divider">❀ ❀ ❀</div>
+    <p class="section-title"><span>💡</span> Ideias para o Brunch</p>
+    <div class="card">
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">Sugestões de pesquisa no Pinterest e Instagram:</p>
+      <div>
+        <span class="inspo-tag">#brunchflorido</span>
+        <span class="inspo-tag">#brunchgarden</span>
+        <span class="inspo-tag">#mesaposta</span>
+        <span class="inspo-tag">#decoracaoflorida</span>
+        <span class="inspo-tag">#bolodeflorescaseiro</span>
+        <span class="inspo-tag">#floraisrose</span>
+        <span class="inspo-tag">#chadefruta</span>
+        <span class="inspo-tag">#gardenparty</span>
+      </div>
+
+      <div style="margin-top:16px;border-top:1px solid rgba(232,114,138,0.1);padding-top:14px;">
+        <p style="font-size:12px;font-weight:500;color:var(--text);margin-bottom:10px;">🌸 Sugestões para o menu</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--text-muted);">
+          <span>🫐 Bowl de açaí</span>
+          <span>🥐 Croissant artesanal</span>
+          <span>🍓 Torta de morango</span>
+          <span>🧇 Waffles com flores</span>
+          <span>🥗 Salada de frutas</span>
+          <span>🍰 Naked cake floral</span>
+          <span>🫖 Chá de flores</span>
+          <span>🥂 Mimosas rosê</span>
+          <span>🍞 Pão de mel</span>
+          <span>☕ Café coado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────
+let data = {
+  info: { date: '2026-06-21', time: '16:00' },
+  guests: [],
+  costs: [],
+  tasks: [
+    { id: 1, text: 'Definir data e local', done: false },
+    { id: 2, text: 'Fazer lista de convidados', done: false },
+    { id: 3, text: 'Criar convite digital', done: false },
+    { id: 4, text: 'Escolher o bolo', done: false },
+    { id: 5, text: 'Contratar florista ou comprar flores', done: false },
+    { id: 6, text: 'Definir menu do brunch', done: false },
+    { id: 7, text: 'Montar playlist', done: false },
+    { id: 8, text: 'Comprar outfit', done: false },
+  ],
+  photos: [],
+  budgetGoal: 0,
+  nextGuestId: 1,
+  nextCostId: 1,
+  nextTaskId: 9,
+  nextPhotoId: 1,
+};
+
+function saveData() {
+  try { localStorage.setItem('brunch23', JSON.stringify(data)); } catch(e){}
+}
+
+function loadData() {
+  try {
+    const s = localStorage.getItem('brunch23');
+    if (s) data = JSON.parse(s);
+  } catch(e){}
+}
+
+// ── TABS ──────────────────────────────────────────────────────────────
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ── TAG SELECT ────────────────────────────────────────────────────────
+function selectTag(el, groupId) {
+  document.querySelectorAll('#' + groupId + ' .tag-opt').forEach(t => t.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function getSelectedTag(groupId) {
+  const sel = document.querySelector('#' + groupId + ' .tag-opt.selected');
+  return sel ? sel.getAttribute('data-val') : '';
+}
+
+// ── TOAST ─────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ── INFO ──────────────────────────────────────────────────────────────
+function saveInfo() {
+  data.info.date = document.getElementById('evt-date').value;
+  data.info.time = document.getElementById('evt-time').value;
+  data.info.local = document.getElementById('evt-local').value;
+  data.info.addr = document.getElementById('evt-addr').value;
+  data.info.theme = document.getElementById('evt-theme').value;
+  data.info.obs = document.getElementById('evt-obs').value;
+  saveData();
+  updateDateBadge();
+}
+
+function loadInfo() {
+  if (!data.info) return;
+  ['date','time','local','addr','theme','obs'].forEach(k => {
+    const el = document.getElementById('evt-' + k);
+    if (el && data.info[k] !== undefined) el.value = data.info[k];
+  });
+  updateDateBadge();
+}
+
+function updateDateBadge() {
+  if (data.info.date) {
+    const d = new Date(data.info.date + 'T12:00:00');
+    const opts = { day: 'numeric', month: 'long', year: 'numeric' };
+    const dateText = d.toLocaleDateString('pt-BR', opts);
+    const el = document.getElementById('event-date-text');
+    if (el) el.textContent = dateText;
+  }
+  if (data.info.time) {
+    const [h, m] = data.info.time.split(':');
+    const el = document.getElementById('event-time-text');
+    if (el) el.textContent = h + 'h' + (m && m !== '00' ? m : '');
+  }
+}
+
+// ── GUESTS ────────────────────────────────────────────────────────────
+let guestFilter = 'all';
+
+function addGuest() {
+  const name = document.getElementById('g-name').value.trim();
+  if (!name) { showToast('Digite o nome do convidado 🌸'); return; }
+  const guest = {
+    id: data.nextGuestId++,
+    name,
+    contact: document.getElementById('g-contact').value.trim(),
+    group: getSelectedTag('group-options'),
+    status: 'pending'
+  };
+  data.guests.push(guest);
+  saveData();
+  document.getElementById('g-name').value = '';
+  document.getElementById('g-contact').value = '';
+  renderGuests();
+  updateStats();
+  showToast(name + ' adicionada(o)! 🌸');
+}
+
+function setGuestStatus(id, status) {
+  const g = data.guests.find(g => g.id === id);
+  if (g) { g.status = status; saveData(); renderGuests(); updateStats(); }
+}
+
+function deleteGuest(id) {
+  data.guests = data.guests.filter(g => g.id !== id);
+  saveData(); renderGuests(); updateStats();
+}
+
+function filterGuests(f) {
+  guestFilter = f;
+  ['all','confirmed','pending','no'].forEach(k => {
+    document.getElementById('f-' + k).classList.toggle('selected', k === f);
+  });
+  renderGuests();
+}
+
+function renderGuests() {
+  const list = document.getElementById('guest-list');
+  let guests = data.guests;
+  if (guestFilter === 'confirmed') guests = guests.filter(g => g.status === 'confirmed');
+  else if (guestFilter === 'pending') guests = guests.filter(g => g.status === 'pending');
+  else if (guestFilter === 'no') guests = guests.filter(g => g.status === 'no');
+
+  document.getElementById('guest-empty').style.display = guests.length === 0 ? 'block' : 'none';
+  list.innerHTML = guests.map(g => {
+    const initials = g.name.split(' ').map(w => w[0]).slice(0,2).join('').toUpperCase();
+    const badge = g.status === 'confirmed' ? '<span class="confirmed-badge badge-yes">✅ Confirmado</span>'
+      : g.status === 'no' ? '<span class="confirmed-badge badge-no">❌ Não vai</span>'
+      : '<span class="confirmed-badge badge-pending">⏳ Aguardando</span>';
+    const groupLabel = {amigos:'👥 Amigos',familia:'❤️ Família',trabalho:'💼 Trabalho',faculdade:'🎓 Faculdade',outros:'✨ Outros'}[g.group] || g.group;
+    return `<div class="guest-card">
+      <div class="guest-avatar">${initials}</div>
+      <div class="guest-info">
+        <div class="guest-name">${g.name}</div>
+        <div class="guest-tag">${groupLabel}${g.contact ? ' · ' + g.contact : ''}</div>
+        <div style="margin-top:4px;">${badge}</div>
+      </div>
+      <div class="guest-actions">
+        ${g.status !== 'confirmed' ? `<button class="btn btn-sm btn-confirm" onclick="setGuestStatus(${g.id},'confirmed')">✅</button>` : ''}
+        ${g.status !== 'no' ? `<button class="btn btn-sm btn-delete" onclick="setGuestStatus(${g.id},'no')">❌</button>` : ''}
+        <button class="btn btn-sm btn-delete" onclick="deleteGuest(${g.id})" style="padding:6px 8px;">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── COSTS ─────────────────────────────────────────────────────────────
+const catEmoji = {comida:'🍓',bebida:'🥂',decoracao:'🌸',local:'🏡',roupa:'👗',musica:'🎵',outro:'📦'};
+const catColors = {comida:'cat-comida',bebida:'cat-bebida',decoracao:'cat-decoracao',local:'cat-local',roupa:'cat-roupa',musica:'cat-musica',outro:'cat-outro'};
+
+function addCost() {
+  const name = document.getElementById('c-name').value.trim();
+  const val = parseFloat(document.getElementById('c-value').value);
+  if (!name) { showToast('Descreva o gasto 💸'); return; }
+  if (isNaN(val) || val < 0) { showToast('Valor inválido'); return; }
+  const cost = {
+    id: data.nextCostId++,
+    name,
+    value: val,
+    paid: document.getElementById('c-paid').value,
+    category: getSelectedTag('cat-options')
+  };
+  data.costs.push(cost);
+  saveData();
+  document.getElementById('c-name').value = '';
+  document.getElementById('c-value').value = '';
+  renderCosts();
+  updateStats();
+  showToast('Gasto registrado! 💐');
+}
+
+function togglePaid(id) {
+  const c = data.costs.find(c => c.id === id);
+  if (c) { c.paid = c.paid === 'pago' ? 'pendente' : 'pago'; saveData(); renderCosts(); updateStats(); }
+}
+
+function deleteCost(id) {
+  data.costs = data.costs.filter(c => c.id !== id);
+  saveData(); renderCosts(); updateStats();
+}
+
+function saveCostData() {
+  data.budgetGoal = parseFloat(document.getElementById('budget-goal').value) || 0;
+  saveData();
+}
+
+function renderBudgetProgress() {
+  const total = data.costs.reduce((s, c) => s + c.value, 0);
+  const goal = data.budgetGoal;
+  const pct = goal > 0 ? Math.min(100, (total / goal) * 100) : 0;
+  document.getElementById('prog-spent').textContent = 'R$ ' + total.toFixed(2);
+  document.getElementById('prog-goal').textContent = goal > 0 ? 'R$ ' + goal.toFixed(2) : 'Não definida';
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-fill').style.background = pct > 90 ? 'linear-gradient(90deg, #e65100, #c44e6a)' : 'linear-gradient(90deg, var(--rose), var(--rose-deep))';
+}
+
+function renderCosts() {
+  const list = document.getElementById('cost-list');
+  const total = data.costs.reduce((s, c) => s + c.value, 0);
+  document.getElementById('total-display').textContent = 'R$ ' + total.toLocaleString('pt-BR', {minimumFractionDigits:2});
+
+  document.getElementById('cost-empty').style.display = data.costs.length === 0 ? 'block' : 'none';
+  document.getElementById('breakdown-card').style.display = data.costs.length > 0 ? 'block' : 'none';
+
+  // breakdown by category
+  const cats = {};
+  data.costs.forEach(c => { cats[c.category] = (cats[c.category]||0) + c.value; });
+  const breakEl = document.getElementById('budget-breakdown');
+  breakEl.innerHTML = Object.entries(cats).sort((a,b) => b[1]-a[1]).map(([cat, val]) => {
+    const pct = total > 0 ? (val/total*100) : 0;
+    return `<div class="budget-cat">
+      <span class="budget-cat-icon">${catEmoji[cat]||'📦'}</span>
+      <span class="budget-cat-name">${cat}</span>
+      <div class="budget-cat-bar-wrap"><div class="budget-cat-bar" style="width:${pct}%"></div></div>
+      <span class="budget-cat-val">R$${val.toFixed(2)}</span>
+    </div>`;
+  }).join('');
+
+  list.innerHTML = data.costs.map(c => {
+    return `<div class="cost-card">
+      <div class="cost-icon" style="background:var(--rose-light);">${catEmoji[c.category]||'📦'}</div>
+      <div class="cost-info">
+        <div class="cost-name">${c.name}</div>
+        <div class="cost-cat">
+          <span class="cat-badge ${catColors[c.category]||'cat-outro'}">${c.category}</span>
+          <span class="paid-badge ${c.paid==='pago'?'paid-yes':'paid-no'}" style="margin-left:4px;cursor:pointer;" onclick="togglePaid(${c.id})">${c.paid==='pago'?'✅ Pago':'⏳ Pendente'}</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="cost-value">R$${c.value.toFixed(2)}</span>
+        <button class="btn btn-sm btn-delete" onclick="deleteCost(${c.id})" style="padding:6px 8px;">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  renderBudgetProgress();
+}
+
+// ── TASKS ─────────────────────────────────────────────────────────────
+function addTask() {
+  const text = document.getElementById('task-input').value.trim();
+  if (!text) return;
+  data.tasks.push({ id: data.nextTaskId++, text, done: false });
+  document.getElementById('task-input').value = '';
+  saveData(); renderTasks();
+}
+
+function toggleTask(id) {
+  const t = data.tasks.find(t => t.id === id);
+  if (t) { t.done = !t.done; saveData(); renderTasks(); }
+}
+
+function deleteTask(id) {
+  data.tasks = data.tasks.filter(t => t.id !== id);
+  saveData(); renderTasks();
+}
+
+function renderTasks() {
+  const list = document.getElementById('task-list');
+  const pending = data.tasks.filter(t => !t.done);
+  const done = data.tasks.filter(t => t.done);
+  const all = [...pending, ...done];
+  document.getElementById('task-empty').style.display = all.length === 0 ? 'block' : 'none';
+  list.innerHTML = all.map(t => `
+    <div class="checklist-item ${t.done ? 'done' : ''}">
+      <div class="check-box ${t.done ? 'checked' : ''}" onclick="toggleTask(${t.id})">${t.done ? '✓' : ''}</div>
+      <span class="check-text">${t.text}</span>
+      <button class="btn btn-sm btn-delete" onclick="deleteTask(${t.id})" style="padding:6px 8px;margin-left:4px;">🗑</button>
+    </div>
+  `).join('');
+}
+
+// ── PHOTOS ────────────────────────────────────────────────────────────
+function addPhoto() {
+  const url = document.getElementById('img-url').value.trim();
+  const note = document.getElementById('img-note').value.trim();
+  if (!url) { showToast('Cole a URL de uma imagem 🌸'); return; }
+  data.photos.push({ id: data.nextPhotoId++, url, note });
+  document.getElementById('img-url').value = '';
+  document.getElementById('img-note').value = '';
+  saveData(); renderPhotos();
+  showToast('Inspiração adicionada! 🌺');
+}
+
+function deletePhoto(id) {
+  data.photos = data.photos.filter(p => p.id !== id);
+  saveData(); renderPhotos();
+}
+
+function renderPhotos() {
+  const grid = document.getElementById('photo-grid');
+  document.getElementById('photo-empty').style.display = data.photos.length === 0 ? 'block' : 'none';
+  grid.innerHTML = data.photos.map(p => `
+    <div class="photo-item has-photo">
+      <img src="${p.url}" onerror="this.parentElement.innerHTML='<div style=\\'padding:12px;font-size:11px;color:var(--text-muted);text-align:center;\\'>Imagem não encontrada</div>'">
+      <div class="photo-overlay">
+        <span class="photo-note">${p.note || ''}</span>
+        <button class="photo-delete-btn" onclick="deletePhoto(${p.id})">✕</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── STATS ─────────────────────────────────────────────────────────────
+function updateStats() {
+  document.getElementById('stat-total').textContent = data.guests.length;
+  document.getElementById('stat-confirmed').textContent = data.guests.filter(g => g.status === 'confirmed').length;
+  const total = data.costs.reduce((s, c) => s + c.value, 0);
+  document.getElementById('stat-cost').textContent = total >= 1000
+    ? 'R$' + (total/1000).toFixed(1) + 'k'
+    : 'R$' + total.toFixed(0);
+}
+
+// ── SPOTIFY ───────────────────────────────────────────────────────────
+function embedSpotify() {
+  const url = document.getElementById('spotify-url').value.trim();
+  if (!url) { showToast('Cole o link do Spotify 🎵'); return; }
+  // Converte URL normal para embed
+  let embedUrl = url
+    .replace('https://open.spotify.com/', 'https://open.spotify.com/embed/')
+    .split('?')[0];
+  if (!embedUrl.includes('/embed/')) { showToast('Link inválido. Use um link do Spotify 🎵'); return; }
+  document.getElementById('spotify-iframe').src = embedUrl;
+  document.getElementById('spotify-embed-wrap').style.display = 'block';
+  document.getElementById('spotify-empty').style.display = 'none';
+  saveSpotify();
+  showToast('Playlist carregada! 🎶');
+}
+
+function saveSpotify() {
+  data.spotifyUrl = document.getElementById('spotify-url').value.trim();
+  saveData();
+}
+
+function clearSpotify() {
+  data.spotifyUrl = '';
+  document.getElementById('spotify-url').value = '';
+  document.getElementById('spotify-iframe').src = '';
+  document.getElementById('spotify-embed-wrap').style.display = 'none';
+  document.getElementById('spotify-empty').style.display = 'block';
+  saveData();
+}
+
+function loadSpotify() {
+  if (data.spotifyUrl) {
+    document.getElementById('spotify-url').value = data.spotifyUrl;
+    embedSpotify();
+  }
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────
+loadData();
+loadInfo();
+loadSpotify();
+if (data.budgetGoal) document.getElementById('budget-goal').value = data.budgetGoal;
+renderGuests();
+renderCosts();
+renderTasks();
+renderPhotos();
+updateStats();
+</script>
+
+</body>
+</html>
