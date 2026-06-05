@@ -74,11 +74,69 @@
   header {
     position: relative;
     z-index: 1;
-    padding: 48px 24px 20px;
+    padding: 52px 24px 20px;
     text-align: center;
   }
 
+  .event-datetime {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
 
+  .event-date-pill, .event-time-pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: white;
+    border: 1.5px solid var(--rose-mid);
+    border-radius: 30px;
+    padding: 7px 16px;
+    box-shadow: 0 2px 10px rgba(232,114,138,0.13);
+  }
+
+  .event-date-pill .pill-icon,
+  .event-time-pill .pill-icon {
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .event-date-pill .pill-text,
+  .event-time-pill .pill-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--rose-deep);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .event-time-pill {
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    border-color: transparent;
+  }
+
+  .event-time-pill .pill-text {
+    color: white;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--rose-deep);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  header p {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
 
   /* STATS BAR */
   .stats-bar {
@@ -695,119 +753,6 @@
   /* PHOTO URL INPUT */
   input[type="file"] { display: none; }
 
-  /* NEW HEADER INFO BLOCK */
-  header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-weight: 600;
-    color: var(--rose-deep);
-    line-height: 1.2;
-    margin-bottom: 6px;
-  }
-  .header-sub {
-    font-size: 13px;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-bottom: 18px;
-  }
-  .event-info-block {
-    background: white;
-    border: 1.5px solid var(--rose-mid);
-    border-radius: 18px;
-    padding: 16px 20px;
-    box-shadow: 0 4px 18px rgba(232,114,138,0.13);
-    display: inline-flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    text-align: left;
-  }
-  .event-info-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .event-info-icon { font-size: 16px; line-height: 1.5; flex-shrink: 0; }
-  .event-info-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--rose-deep);
-    line-height: 1.5;
-  }
-  .event-addr-name {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--rose-deep);
-  }
-  .event-addr-detail {
-    display: block;
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 2px;
-  }
-  .event-divider-dot {
-    text-align: center;
-    color: var(--rose-mid);
-    font-size: 12px;
-    letter-spacing: 4px;
-  }
-
-  /* FILTER GROUP PILLS */
-  .group-filter-bar {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 8px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding-bottom: 2px;
-    flex-wrap: nowrap;
-  }
-  .group-filter-bar::-webkit-scrollbar { display: none; }
-
-  /* PINTEREST BOARD */
-  .pinterest-board {
-    background: white;
-    border-radius: var(--radius);
-    border: 1.5px solid #e60023;
-    padding: 14px 16px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 2px 10px rgba(230,0,35,0.08);
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .pinterest-logo {
-    width: 36px; height: 36px;
-    background: #e60023;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-weight: 900; font-size: 20px;
-    flex-shrink: 0;
-    font-family: Georgia, serif;
-  }
-  .pinterest-info { flex: 1; min-width: 0; }
-  .pinterest-title { font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .pinterest-url { font-size: 11px; color: #e60023; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .pinterest-delete { background: #fce8ec; border: none; color: var(--rose-deep); border-radius: 8px; padding: 6px 8px; cursor: pointer; font-size: 14px; flex-shrink: 0; }
-
-  /* PRINT STYLES */
-  @media print {
-    body { max-width: 100%; background: white; }
-    .no-print { display: none !important; }
-    .print-only { display: block !important; }
-    header, .stats-bar, .nav, .floral-bg { display: none !important; }
-    main { padding: 0; }
-    .tab-content { display: none !important; }
-    #print-guest-list { display: block !important; }
-  }
-  #print-guest-list { display: none; }
-  .print-only { display: none; }
-
 </style>
 </head>
 <body>
@@ -822,22 +767,18 @@
 </div>
 
 <header>
-  <h1>Meu Brunch<br><em>de 23 Anos</em> 🌸</h1>
-  <p class="header-sub">florido, delicioso & inesquecível</p>
-  <div class="event-info-block">
-    <div class="event-info-row">
-      <span class="event-info-icon">🗓</span>
-      <span class="event-info-text">21 de junho de 2025 &nbsp;·&nbsp; 16h00</span>
+  <div class="event-datetime">
+    <div class="event-date-pill">
+      <span class="pill-icon">🗓</span>
+      <span class="pill-text" id="event-date-text">21 de junho de 2026</span>
     </div>
-    <div class="event-divider-dot">✦</div>
-    <div class="event-info-row">
-      <span class="event-info-icon">📍</span>
-      <div class="event-info-addr">
-        <span class="event-addr-name">Residencial Granville</span>
-        <span class="event-addr-detail">Av. Hugo Viola, 211 — Jardim da Penha, Vitória ES</span>
-      </div>
+    <div class="event-time-pill">
+      <span class="pill-icon">🕓</span>
+      <span class="pill-text" id="event-time-text">16h00</span>
     </div>
   </div>
+  <h1>Meu Brunch<br><em>de 23 Anos</em> 🌸</h1>
+  <p>florido, delicioso & inesquecível</p>
 </header>
 
 <div class="stats-bar">
@@ -866,7 +807,7 @@
 <main>
 
   <!-- GUESTS TAB -->
-  <div class="tab-content" id="tab-guests">
+  <div class="tab-content active" id="tab-guests">
     <p class="section-title"><span>🌸</span> Lista de Convidados</p>
 
     <div class="card">
@@ -875,45 +816,39 @@
         <input type="text" id="g-name" placeholder="Nome do convidado">
       </div>
       <div class="form-group">
+        <label>Contato (opcional)</label>
+        <input type="text" id="g-contact" placeholder="@instagram, número...">
+      </div>
+      <div class="form-group">
         <label>Grupo</label>
         <div class="tag-options" id="group-options">
-          <div class="tag-opt selected" data-val="amigos" onclick="selectTag(this,'group-options')">👥 Amigos</div>
-          <div class="tag-opt" data-val="familia" onclick="selectTag(this,'group-options')">❤️ Família</div>
-          <div class="tag-opt" data-val="faculdade" onclick="selectTag(this,'group-options')">🎓 Faculdade</div>
-          <div class="tag-opt" data-val="trabalho" onclick="selectTag(this,'group-options')">💼 Trabalho</div>
-          <div class="tag-opt" data-val="outros" onclick="selectTag(this,'group-options')">✨ Outros</div>
+          <div class="tag-opt selected" data-val="amigos" onclick="selectTag(this,'group-options')">Amigos</div>
+          <div class="tag-opt" data-val="familia" onclick="selectTag(this,'group-options')">Família</div>
+          <div class="tag-opt" data-val="trabalho" onclick="selectTag(this,'group-options')">Trabalho</div>
+          <div class="tag-opt" data-val="faculdade" onclick="selectTag(this,'group-options')">Faculdade</div>
+          <div class="tag-opt" data-val="outros" onclick="selectTag(this,'group-options')">Outros</div>
         </div>
       </div>
       <button class="btn btn-primary" onclick="addGuest()">+ Adicionar Convidado</button>
     </div>
 
-    <!-- STATUS FILTER -->
-    <div style="display:flex;gap:8px;margin-bottom:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;">
+    <!-- FILTER -->
+    <div style="display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;">
       <button class="tag-opt selected" style="flex-shrink:0" id="f-all" onclick="filterGuests('all')">Todos</button>
       <button class="tag-opt" style="flex-shrink:0" id="f-confirmed" onclick="filterGuests('confirmed')">✅ Confirmados</button>
       <button class="tag-opt" style="flex-shrink:0" id="f-pending" onclick="filterGuests('pending')">⏳ Aguardando</button>
       <button class="tag-opt" style="flex-shrink:0" id="f-no" onclick="filterGuests('no')">❌ Não vai</button>
-    </div>
-
-    <!-- GROUP FILTER -->
-    <div class="group-filter-bar">
-      <button class="tag-opt selected" style="flex-shrink:0" id="fg-all" onclick="filterGuestGroup('all')">🌸 Todos os grupos</button>
-      <button class="tag-opt" style="flex-shrink:0" id="fg-amigos" onclick="filterGuestGroup('amigos')">👥 Amigos</button>
-      <button class="tag-opt" style="flex-shrink:0" id="fg-familia" onclick="filterGuestGroup('familia')">❤️ Família</button>
-      <button class="tag-opt" style="flex-shrink:0" id="fg-faculdade" onclick="filterGuestGroup('faculdade')">🎓 Faculdade</button>
-      <button class="tag-opt" style="flex-shrink:0" id="fg-trabalho" onclick="filterGuestGroup('trabalho')">💼 Trabalho</button>
-      <button class="tag-opt" style="flex-shrink:0" id="fg-outros" onclick="filterGuestGroup('outros')">✨ Outros</button>
+      <button class="tag-opt" style="flex-shrink:0" id="f-amigos" onclick="filterGuests('amigos')">👥 Amigos</button>
+      <button class="tag-opt" style="flex-shrink:0" id="f-familia" onclick="filterGuests('familia')">❤️ Família</button>
+      <button class="tag-opt" style="flex-shrink:0" id="f-trabalho" onclick="filterGuests('trabalho')">💼 Trabalho</button>
+      <button class="tag-opt" style="flex-shrink:0" id="f-faculdade" onclick="filterGuests('faculdade')">🎓 Faculdade</button>
+      <button class="tag-opt" style="flex-shrink:0" id="f-outros" onclick="filterGuests('outros')">✨ Outros</button>
     </div>
 
     <div id="guest-list"></div>
     <div id="guest-empty" class="empty-state" style="display:none">
       <div class="emoji">🌺</div>
       <p>Nenhum convidado ainda.<br>Adicione os primeiros!</p>
-    </div>
-
-    <!-- EXPORT BUTTON -->
-    <div style="margin-top:16px;">
-      <button class="btn btn-primary" style="background:var(--rose-deep);" onclick="printGuestList()">🖨️ Exportar lista para portaria</button>
     </div>
   </div>
 
@@ -1059,32 +994,8 @@
   <!-- INSPO TAB -->
   <div class="tab-content" id="tab-inspo">
     <p class="section-title"><span>🎨</span> Mural de Inspirações</p>
-    <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">Adicione fotos e pastas do Pinterest para montar o mood board do seu brunch florido ✨</p>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">Adicione fotos e links para montar o mood board do seu brunch florido ✨</p>
 
-    <!-- PINTEREST BOARDS -->
-    <div class="card" style="margin-bottom:16px;">
-      <p style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:12px;">📌 Pastas do Pinterest</p>
-      <div class="form-group">
-        <label>Título da pasta</label>
-        <input type="text" id="pin-title" placeholder="Ex: Decoração do Brunch">
-      </div>
-      <div class="form-group">
-        <label>Link da pasta do Pinterest</label>
-        <div style="display:flex;gap:8px;">
-          <input type="url" id="pin-url" placeholder="https://pinterest.com/..." style="flex:1;">
-          <button class="btn btn-primary" style="width:auto;padding:10px 14px;white-space:nowrap;background:#e60023;" onclick="addPinterest()">+ Add</button>
-        </div>
-      </div>
-    </div>
-
-    <div id="pinterest-list"></div>
-    <div id="pinterest-empty" class="empty-state" style="display:none;padding:16px;">
-      <p style="font-size:12px;">Nenhuma pasta adicionada ainda.</p>
-    </div>
-
-    <div class="floral-divider">❀ ❀ ❀</div>
-
-    <p class="section-title"><span>🖼️</span> Fotos de Inspiração</p>
     <div class="card" style="margin-bottom:16px;">
       <div class="form-group">
         <label>URL da imagem ou foto</label>
@@ -1143,9 +1054,6 @@
 
 <div class="toast" id="toast"></div>
 
-<!-- PRINT GUEST LIST -->
-<div id="print-guest-list"></div>
-
 <script>
 // ── DATA ──────────────────────────────────────────────────────────────
 let data = {
@@ -1163,13 +1071,11 @@ let data = {
     { id: 8, text: 'Comprar outfit', done: false },
   ],
   photos: [],
-  pinterestBoards: [],
   budgetGoal: 0,
   nextGuestId: 1,
   nextCostId: 1,
   nextTaskId: 9,
   nextPhotoId: 1,
-  nextPinId: 1,
 };
 
 function saveData() {
@@ -1248,7 +1154,6 @@ function updateDateBadge() {
 
 // ── GUESTS ────────────────────────────────────────────────────────────
 let guestFilter = 'all';
-let guestGroupFilter = 'all';
 
 function addGuest() {
   const name = document.getElementById('g-name').value.trim();
@@ -1256,12 +1161,14 @@ function addGuest() {
   const guest = {
     id: data.nextGuestId++,
     name,
+    contact: document.getElementById('g-contact').value.trim(),
     group: getSelectedTag('group-options'),
     status: 'pending'
   };
   data.guests.push(guest);
   saveData();
   document.getElementById('g-name').value = '';
+  document.getElementById('g-contact').value = '';
   renderGuests();
   updateStats();
   showToast(name + ' adicionada(o)! 🌸');
@@ -1279,16 +1186,9 @@ function deleteGuest(id) {
 
 function filterGuests(f) {
   guestFilter = f;
-  ['all','confirmed','pending','no'].forEach(k => {
-    document.getElementById('f-' + k).classList.toggle('selected', k === f);
-  });
-  renderGuests();
-}
-
-function filterGuestGroup(g) {
-  guestGroupFilter = g;
-  ['all','amigos','familia','faculdade','trabalho','outros'].forEach(k => {
-    document.getElementById('fg-' + k).classList.toggle('selected', k === g);
+  ['all','confirmed','pending','no','amigos','familia','trabalho','faculdade','outros'].forEach(k => {
+    const el = document.getElementById('f-' + k);
+    if (el) el.classList.toggle('selected', k === f);
   });
   renderGuests();
 }
@@ -1299,21 +1199,22 @@ function renderGuests() {
   if (guestFilter === 'confirmed') guests = guests.filter(g => g.status === 'confirmed');
   else if (guestFilter === 'pending') guests = guests.filter(g => g.status === 'pending');
   else if (guestFilter === 'no') guests = guests.filter(g => g.status === 'no');
-  if (guestGroupFilter !== 'all') guests = guests.filter(g => g.group === guestGroupFilter);
+  else if (['amigos','familia','trabalho','faculdade','outros'].includes(guestFilter)) {
+    guests = guests.filter(g => g.group === guestFilter);
+  }
 
   document.getElementById('guest-empty').style.display = guests.length === 0 ? 'block' : 'none';
-  const groupLabel = {amigos:'👥 Amigos',familia:'❤️ Família',trabalho:'💼 Trabalho',faculdade:'🎓 Faculdade',outros:'✨ Outros'};
   list.innerHTML = guests.map(g => {
     const initials = g.name.split(' ').map(w => w[0]).slice(0,2).join('').toUpperCase();
     const badge = g.status === 'confirmed' ? '<span class="confirmed-badge badge-yes">✅ Confirmado</span>'
       : g.status === 'no' ? '<span class="confirmed-badge badge-no">❌ Não vai</span>'
       : '<span class="confirmed-badge badge-pending">⏳ Aguardando</span>';
-    const gl = groupLabel[g.group] || g.group;
+    const groupLabel = {amigos:'👥 Amigos',familia:'❤️ Família',trabalho:'💼 Trabalho',faculdade:'🎓 Faculdade',outros:'✨ Outros'}[g.group] || g.group;
     return `<div class="guest-card">
       <div class="guest-avatar">${initials}</div>
       <div class="guest-info">
         <div class="guest-name">${g.name}</div>
-        <div class="guest-tag">${gl}</div>
+        <div class="guest-tag">${groupLabel}${g.contact ? ' · ' + g.contact : ''}</div>
         <div style="margin-top:4px;">${badge}</div>
       </div>
       <div class="guest-actions">
@@ -1323,56 +1224,6 @@ function renderGuests() {
       </div>
     </div>`;
   }).join('');
-}
-
-function printGuestList() {
-  if (data.guests.length === 0) { showToast('Nenhum convidado para exportar 🌸'); return; }
-  const groupLabel = {amigos:'Amigos',familia:'Família',trabalho:'Trabalho',faculdade:'Faculdade',outros:'Outros'};
-  const groups = ['familia','amigos','faculdade','trabalho','outros'];
-  let html = `
-    <html><head><meta charset="UTF-8">
-    <title>Lista de Convidados – Brunch 23 Anos</title>
-    <style>
-      body { font-family: Georgia, serif; max-width: 700px; margin: 40px auto; color: #3a2a2e; }
-      h1 { font-size: 26px; color: #c44e6a; text-align: center; margin-bottom: 4px; }
-      .subtitle { text-align: center; font-size: 13px; color: #8a7278; margin-bottom: 6px; font-style: italic; }
-      .date-loc { text-align: center; font-size: 13px; color: #3a2a2e; margin-bottom: 28px; font-weight: bold; }
-      h2 { font-size: 15px; color: #c44e6a; border-bottom: 1.5px solid #f2c4d4; padding-bottom: 4px; margin: 22px 0 10px; }
-      table { width: 100%; border-collapse: collapse; }
-      th { text-align: left; font-size: 11px; color: #8a7278; text-transform: uppercase; padding: 6px 8px; border-bottom: 1px solid #f2c4d4; }
-      td { padding: 8px 8px; font-size: 13px; border-bottom: 1px solid #f9e4ec; }
-      .status { font-size: 11px; }
-      .s-confirmed { color: #4caf50; }
-      .s-pending { color: #9c6cbf; }
-      .s-no { color: #c44e6a; }
-      .total { font-size: 12px; color: #8a7278; margin-top: 4px; }
-      @media print { body { margin: 20px; } }
-    </style></head><body>
-    <h1>🌸 Brunch de 23 Anos</h1>
-    <div class="subtitle">florido, delicioso & inesquecível</div>
-    <div class="date-loc">21 de junho de 2025 · 16h00 — Residencial Granville, Av. Hugo Viola, 211 – Vitória ES</div>
-  `;
-  const confirmed = data.guests.filter(g => g.status === 'confirmed');
-  const pending = data.guests.filter(g => g.status === 'pending');
-  html += `<div class="total">Total: ${data.guests.length} convidados · ${confirmed.length} confirmados · ${pending.length} aguardando</div>`;
-  groups.forEach(grp => {
-    const list = data.guests.filter(g => g.group === grp);
-    if (!list.length) return;
-    html += `<h2>${{amigos:'👥',familia:'❤️',faculdade:'🎓',trabalho:'💼',outros:'✨'}[grp]} ${groupLabel[grp]} (${list.length})</h2>
-    <table><tr><th>#</th><th>Nome</th><th>Confirmação</th><th>✔ Entrada</th></tr>`;
-    list.forEach((g, i) => {
-      const sClass = g.status === 'confirmed' ? 's-confirmed' : g.status === 'no' ? 's-no' : 's-pending';
-      const sText = g.status === 'confirmed' ? '✅ Confirmado' : g.status === 'no' ? '❌ Não vai' : '⏳ Aguardando';
-      html += `<tr><td>${i+1}</td><td>${g.name}</td><td class="status ${sClass}">${sText}</td><td></td></tr>`;
-    });
-    html += `</table>`;
-  });
-  html += `</body></html>`;
-  const w = window.open('', '_blank');
-  w.document.write(html);
-  w.document.close();
-  w.focus();
-  setTimeout(() => w.print(), 500);
 }
 
 // ── COSTS ─────────────────────────────────────────────────────────────
