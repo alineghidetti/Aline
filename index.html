@@ -807,48 +807,54 @@
 <main>
 
   <!-- GUESTS TAB -->
-  <div class="tab-content active" id="tab-guests">
+  <div class="tab-content" id="tab-guests">
     <p class="section-title"><span>🌸</span> Lista de Convidados</p>
-
+ 
     <div class="card">
       <div class="form-group">
         <label>Nome</label>
         <input type="text" id="g-name" placeholder="Nome do convidado">
       </div>
       <div class="form-group">
-        <label>Contato (opcional)</label>
-        <input type="text" id="g-contact" placeholder="@instagram, número...">
-      </div>
-      <div class="form-group">
         <label>Grupo</label>
         <div class="tag-options" id="group-options">
-          <div class="tag-opt selected" data-val="amigos" onclick="selectTag(this,'group-options')">Amigos</div>
-          <div class="tag-opt" data-val="familia" onclick="selectTag(this,'group-options')">Família</div>
-          <div class="tag-opt" data-val="trabalho" onclick="selectTag(this,'group-options')">Trabalho</div>
-          <div class="tag-opt" data-val="faculdade" onclick="selectTag(this,'group-options')">Faculdade</div>
-          <div class="tag-opt" data-val="outros" onclick="selectTag(this,'group-options')">Outros</div>
+          <div class="tag-opt selected" data-val="amigos" onclick="selectTag(this,'group-options')">👥 Amigos</div>
+          <div class="tag-opt" data-val="familia" onclick="selectTag(this,'group-options')">❤️ Família</div>
+          <div class="tag-opt" data-val="faculdade" onclick="selectTag(this,'group-options')">🎓 Faculdade</div>
+          <div class="tag-opt" data-val="trabalho" onclick="selectTag(this,'group-options')">💼 Trabalho</div>
+          <div class="tag-opt" data-val="outros" onclick="selectTag(this,'group-options')">✨ Outros</div>
         </div>
       </div>
       <button class="btn btn-primary" onclick="addGuest()">+ Adicionar Convidado</button>
     </div>
-
-    <!-- FILTER -->
-    <div style="display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;">
+ 
+    <!-- STATUS FILTER -->
+    <div style="display:flex;gap:8px;margin-bottom:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;">
       <button class="tag-opt selected" style="flex-shrink:0" id="f-all" onclick="filterGuests('all')">Todos</button>
       <button class="tag-opt" style="flex-shrink:0" id="f-confirmed" onclick="filterGuests('confirmed')">✅ Confirmados</button>
       <button class="tag-opt" style="flex-shrink:0" id="f-pending" onclick="filterGuests('pending')">⏳ Aguardando</button>
       <button class="tag-opt" style="flex-shrink:0" id="f-no" onclick="filterGuests('no')">❌ Não vai</button>
-      <button class="tag-opt" style="flex-shrink:0" id="f-amigos" onclick="filterGuests('amigos')">👥 Amigos</button>
-      <button class="tag-opt" style="flex-shrink:0" id="f-familia" onclick="filterGuests('familia')">❤️ Família</button>
-      <button class="tag-opt" style="flex-shrink:0" id="f-trabalho" onclick="filterGuests('trabalho')">💼 Trabalho</button>
-      <button class="tag-opt" style="flex-shrink:0" id="f-faculdade" onclick="filterGuests('faculdade')">🎓 Faculdade</button>
-      <button class="tag-opt" style="flex-shrink:0" id="f-outros" onclick="filterGuests('outros')">✨ Outros</button>
     </div>
-
+ 
+    <!-- GROUP FILTER -->
+    <div class="group-filter-bar">
+      <button class="tag-opt selected" style="flex-shrink:0" id="fg-all" onclick="filterGuestGroup('all')">🌸 Todos os grupos</button>
+      <button class="tag-opt" style="flex-shrink:0" id="fg-amigos" onclick="filterGuestGroup('amigos')">👥 Amigos</button>
+      <button class="tag-opt" style="flex-shrink:0" id="fg-familia" onclick="filterGuestGroup('familia')">❤️ Família</button>
+      <button class="tag-opt" style="flex-shrink:0" id="fg-faculdade" onclick="filterGuestGroup('faculdade')">🎓 Faculdade</button>
+      <button class="tag-opt" style="flex-shrink:0" id="fg-trabalho" onclick="filterGuestGroup('trabalho')">💼 Trabalho</button>
+      <button class="tag-opt" style="flex-shrink:0" id="fg-outros" onclick="filterGuestGroup('outros')">✨ Outros</button>
+    </div>
+ 
     <div id="guest-list"></div>
     <div id="guest-empty" class="empty-state" style="display:none">
       <div class="emoji">🌺</div>
       <p>Nenhum convidado ainda.<br>Adicione os primeiros!</p>
+    </div>
+ 
+    <!-- EXPORT BUTTON -->
+    <div style="margin-top:16px;">
+      <button class="btn btn-primary" style="background:var(--rose-deep);" onclick="printGuestList()">🖨️ Exportar lista para portaria</button>
     </div>
   </div>
 
