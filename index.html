@@ -42,7 +42,6 @@
     overflow-x: hidden;
   }
 
-  /* FLORAL DECORATIONS */
   .floral-bg {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -70,7 +69,6 @@
     50% { transform: translateY(-8px) rotate(5deg); }
   }
 
-  /* HEADER */
   header {
     position: relative;
     z-index: 1;
@@ -99,10 +97,7 @@
   }
 
   .event-date-pill .pill-icon,
-  .event-time-pill .pill-icon {
-    font-size: 15px;
-    line-height: 1;
-  }
+  .event-time-pill .pill-icon { font-size: 15px; line-height: 1; }
 
   .event-date-pill .pill-text,
   .event-time-pill .pill-text {
@@ -118,10 +113,7 @@
     background: linear-gradient(135deg, var(--rose), var(--rose-deep));
     border-color: transparent;
   }
-
-  .event-time-pill .pill-text {
-    color: white;
-  }
+  .event-time-pill .pill-text { color: white; }
 
   header h1 {
     font-family: 'Playfair Display', serif;
@@ -131,14 +123,8 @@
     line-height: 1.2;
     margin-bottom: 4px;
   }
+  header p { font-size: 13px; color: var(--text-muted); font-style: italic; }
 
-  header p {
-    font-size: 13px;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-
-  /* STATS BAR */
   .stats-bar {
     position: relative;
     z-index: 1;
@@ -163,15 +149,8 @@
     color: var(--rose);
     display: block;
   }
+  .stat-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
-  .stat-label {
-    font-size: 10px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  /* NAV TABS */
   .nav {
     position: sticky;
     top: 0;
@@ -200,22 +179,12 @@
     transition: all 0.2s;
     white-space: nowrap;
   }
+  .nav-btn.active { color: var(--rose-deep); border-bottom-color: var(--rose); }
 
-  .nav-btn.active {
-    color: var(--rose-deep);
-    border-bottom-color: var(--rose);
-  }
-
-  /* MAIN CONTENT */
-  main {
-    padding: 20px;
-    padding-bottom: 40px;
-  }
-
+  main { padding: 20px; padding-bottom: 40px; }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
-  /* SECTION TITLE */
   .section-title {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
@@ -227,7 +196,6 @@
   }
   .section-title span { font-size: 20px; }
 
-  /* CARD BASE */
   .card {
     background: white;
     border-radius: var(--radius);
@@ -237,7 +205,6 @@
     border: 1px solid rgba(232,114,138,0.1);
   }
 
-  /* FORM */
   .form-group { margin-bottom: 12px; }
   .form-group label {
     display: block;
@@ -261,15 +228,9 @@
     outline: none;
     transition: border-color 0.2s;
   }
-
-  input:focus, select:focus, textarea:focus {
-    border-color: var(--rose);
-    background: white;
-  }
-
+  input:focus, select:focus, textarea:focus { border-color: var(--rose); background: white; }
   textarea { resize: vertical; min-height: 70px; }
 
-  /* BUTTONS */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -283,7 +244,6 @@
     border: none;
     transition: all 0.2s;
   }
-
   .btn-primary {
     background: var(--rose);
     color: white;
@@ -293,30 +253,11 @@
     font-size: 14px;
   }
   .btn-primary:active { transform: scale(0.98); background: var(--rose-deep); }
+  .btn-sm { padding: 6px 12px; font-size: 12px; }
+  .btn-confirm { background: #e8f5e0; color: var(--sage-deep); border: 1px solid var(--sage); }
+  .btn-confirmed { background: var(--sage-deep); color: white; }
+  .btn-delete { background: #fce8ec; color: var(--rose-deep); border: 1px solid var(--rose-mid); }
 
-  .btn-sm {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .btn-confirm {
-    background: #e8f5e0;
-    color: var(--sage-deep);
-    border: 1px solid var(--sage);
-  }
-
-  .btn-confirmed {
-    background: var(--sage-deep);
-    color: white;
-  }
-
-  .btn-delete {
-    background: #fce8ec;
-    color: var(--rose-deep);
-    border: 1px solid var(--rose-mid);
-  }
-
-  /* GUEST CARD */
   .guest-card {
     display: flex;
     align-items: center;
@@ -330,381 +271,130 @@
   }
 
   .guest-avatar {
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--rose-light), var(--lavender));
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    color: var(--rose-deep);
-    flex-shrink: 0;
+    font-size: 16px; color: var(--rose-deep); flex-shrink: 0;
   }
 
   .guest-info { flex: 1; min-width: 0; }
-  .guest-name {
-    font-weight: 500;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .guest-tag {
-    font-size: 11px;
-    color: var(--text-muted);
-  }
+  .guest-name { font-weight: 500; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .guest-tag { font-size: 11px; color: var(--text-muted); }
 
-  .confirmed-badge {
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-weight: 500;
-  }
+  .confirmed-badge { font-size: 10px; padding: 3px 8px; border-radius: 12px; font-weight: 500; }
   .badge-yes { background: #e8f5e0; color: var(--sage-deep); }
   .badge-no { background: #fce8ec; color: var(--rose-deep); }
   .badge-pending { background: #f5f0fe; color: #7c5cbf; }
-
   .guest-actions { display: flex; gap: 6px; flex-shrink: 0; }
 
-  /* COST CARD */
   .cost-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: white;
-    border-radius: var(--radius-sm);
-    padding: 12px 14px;
-    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 12px;
+    background: white; border-radius: var(--radius-sm);
+    padding: 12px 14px; margin-bottom: 8px;
     box-shadow: 0 1px 6px rgba(232,114,138,0.08);
     border: 1px solid rgba(232,114,138,0.1);
   }
-
-  .cost-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-
+  .cost-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
   .cost-info { flex: 1; }
   .cost-name { font-size: 14px; font-weight: 500; }
   .cost-cat { font-size: 11px; color: var(--text-muted); }
-  .cost-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--rose-deep);
-    flex-shrink: 0;
-  }
+  .cost-value { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--rose-deep); flex-shrink: 0; }
 
   .cost-total-bar {
     background: linear-gradient(135deg, var(--rose), #d4c5e8);
-    border-radius: var(--radius);
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 16px;
-    color: white;
+    border-radius: var(--radius); padding: 20px;
+    text-align: center; margin-bottom: 16px; color: white;
   }
   .cost-total-label { font-size: 11px; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.05em; }
-  .cost-total-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 600;
-    margin-top: 4px;
-  }
+  .cost-total-value { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 600; margin-top: 4px; }
 
-  .progress-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-bottom: 5px;
-  }
-  .progress-bar {
-    background: #f0e0e8;
-    border-radius: 6px;
-    height: 8px;
-    overflow: hidden;
-    margin-bottom: 12px;
-  }
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--rose), var(--rose-deep));
-    border-radius: 6px;
-    transition: width 0.5s ease;
-  }
+  .progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+  .progress-bar { background: #f0e0e8; border-radius: 6px; height: 8px; overflow: hidden; margin-bottom: 12px; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--rose), var(--rose-deep)); border-radius: 6px; transition: width 0.5s ease; }
 
-  /* INSPIRATION */
-  .photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
+  .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
 
   .photo-item {
-    position: relative;
-    aspect-ratio: 1;
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    background: var(--rose-light);
-    cursor: pointer;
-    border: 1.5px dashed var(--rose-mid);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 6px;
+    position: relative; aspect-ratio: 1;
+    border-radius: var(--radius-sm); overflow: hidden;
+    background: var(--rose-light); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
     transition: all 0.2s;
   }
-
-  .photo-item.has-photo {
-    border: none;
-    background: none;
-  }
-
-  .photo-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .photo-item .add-icon {
-    font-size: 28px;
-    color: var(--rose);
-  }
-
-  .photo-item .add-text {
-    font-size: 11px;
-    color: var(--text-muted);
-    text-align: center;
-    padding: 0 8px;
-  }
-
-  .photo-item:hover { border-color: var(--rose); }
-
+  .photo-item.has-photo { background: none; }
+  .photo-item img { width: 100%; height: 100%; object-fit: cover; }
   .photo-overlay {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
+    position: absolute; bottom: 0; left: 0; right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.5));
-    padding: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    opacity: 0;
-    transition: opacity 0.2s;
+    padding: 8px; display: flex; justify-content: space-between;
+    align-items: flex-end; opacity: 0; transition: opacity 0.2s;
   }
   .photo-item.has-photo:hover .photo-overlay { opacity: 1; }
-
-  .photo-note {
-    color: white;
-    font-size: 11px;
-    font-style: italic;
-    flex: 1;
-  }
-
+  .photo-note { color: white; font-size: 11px; font-style: italic; flex: 1; }
   .photo-delete-btn {
-    background: rgba(255,255,255,0.3);
-    border: none;
-    color: white;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: rgba(255,255,255,0.3); border: none; color: white;
+    width: 24px; height: 24px; border-radius: 50%; cursor: pointer;
+    font-size: 14px; display: flex; align-items: center; justify-content: center;
   }
 
-  .photo-input-url {
-    margin-top: 8px;
-    display: flex;
-    gap: 8px;
-  }
-
-  /* CHECKLIST */
   .checklist-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 14px;
-    background: white;
-    border-radius: var(--radius-sm);
-    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px; background: white;
+    border-radius: var(--radius-sm); margin-bottom: 8px;
     border: 1px solid rgba(232,114,138,0.1);
     box-shadow: 0 1px 6px rgba(232,114,138,0.06);
     transition: opacity 0.3s;
   }
-
   .checklist-item.done { opacity: 0.5; }
   .checklist-item.done .check-text { text-decoration: line-through; }
-
   .check-box {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    border: 2px solid var(--rose-mid);
-    flex-shrink: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-    background: white;
-    color: white;
-    font-size: 13px;
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--rose-mid); flex-shrink: 0; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; background: white; color: white; font-size: 13px;
   }
-
-  .check-box.checked {
-    background: var(--rose);
-    border-color: var(--rose);
-  }
-
+  .check-box.checked { background: var(--rose); border-color: var(--rose); }
   .check-text { flex: 1; font-size: 14px; }
 
-  /* PALETA / MOOD */
-  .mood-colors {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-
+  .mood-colors { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
   .color-swatch {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    position: relative;
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.12); position: relative;
   }
-
   .color-swatch::after {
-    content: attr(data-name);
-    position: absolute;
-    top: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 9px;
-    color: var(--text-muted);
-    white-space: nowrap;
+    content: attr(data-name); position: absolute; top: 48px; left: 50%;
+    transform: translateX(-50%); font-size: 9px; color: var(--text-muted); white-space: nowrap;
   }
 
-  /* DECORATIVE DIVIDER */
-  .floral-divider {
-    text-align: center;
-    color: var(--rose-mid);
-    font-size: 18px;
-    margin: 16px 0;
-    letter-spacing: 6px;
-  }
+  .floral-divider { text-align: center; color: var(--rose-mid); font-size: 18px; margin: 16px 0; letter-spacing: 6px; }
 
-  /* EMPTY STATE */
-  .empty-state {
-    text-align: center;
-    padding: 32px 20px;
-    color: var(--text-muted);
-  }
+  .empty-state { text-align: center; padding: 32px 20px; color: var(--text-muted); }
   .empty-state .emoji { font-size: 40px; margin-bottom: 10px; }
   .empty-state p { font-size: 13px; }
 
-  /* NOTIFICATION */
   .toast {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
+    position: fixed; bottom: 24px; left: 50%;
     transform: translateX(-50%) translateY(80px);
-    background: var(--rose-deep);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 24px;
-    font-size: 13px;
-    font-weight: 500;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-    white-space: nowrap;
+    background: var(--rose-deep); color: white;
+    padding: 12px 24px; border-radius: 24px;
+    font-size: 13px; font-weight: 500; z-index: 1000;
+    transition: transform 0.3s ease; white-space: nowrap;
     box-shadow: 0 4px 20px rgba(196,78,106,0.3);
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
-  /* MODAL */
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(58,42,46,0.5);
-    z-index: 200;
-    align-items: flex-end;
-    justify-content: center;
-  }
-  .modal-overlay.open { display: flex; }
-
-  .modal-sheet {
-    background: var(--cream);
-    border-radius: 24px 24px 0 0;
-    padding: 20px;
-    width: 100%;
-    max-width: 430px;
-    max-height: 90vh;
-    overflow-y: auto;
-    animation: slideUp 0.3s ease;
-  }
-
-  @keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-  }
-
-  .modal-handle {
-    width: 40px;
-    height: 4px;
-    background: var(--rose-mid);
-    border-radius: 2px;
-    margin: 0 auto 20px;
-  }
-
-  .modal-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--rose-deep);
-    margin-bottom: 16px;
-  }
-
-  /* TAG SELECTOR */
-  .tag-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-
+  .tag-options { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
   .tag-opt {
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1.5px solid var(--rose-mid);
-    background: white;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: all 0.2s;
+    padding: 6px 14px; border-radius: 20px;
+    border: 1.5px solid var(--rose-mid); background: white;
+    font-size: 12px; font-weight: 500; color: var(--text-muted);
+    cursor: pointer; transition: all 0.2s;
   }
   .tag-opt.selected { background: var(--rose); color: white; border-color: var(--rose); }
 
-  /* CATEGORY BADGE */
-  .cat-badge {
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-weight: 500;
-  }
+  .cat-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
   .cat-comida { background: #fff3e0; color: #e65100; }
   .cat-decoracao { background: #fce4ec; color: var(--rose-deep); }
   .cat-local { background: #e8f5e9; color: #2e7d32; }
@@ -713,36 +403,17 @@
   .cat-musica { background: #fff8e1; color: #f57f17; }
   .cat-outro { background: #f5f5f5; color: #616161; }
 
-  .paid-badge {
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-weight: 500;
-  }
+  .paid-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
   .paid-yes { background: #e8f5e0; color: var(--sage-deep); }
   .paid-no { background: #fce8ec; color: var(--rose-deep); }
 
-  /* INSPIRAÇÕES TEMA */
   .inspo-tag {
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 16px;
-    font-size: 11px;
-    font-weight: 500;
-    margin: 3px;
-    background: var(--rose-light);
-    color: var(--rose-deep);
-    border: 1px solid var(--rose-mid);
+    display: inline-block; padding: 5px 12px; border-radius: 16px;
+    font-size: 11px; font-weight: 500; margin: 3px;
+    background: var(--rose-light); color: var(--rose-deep); border: 1px solid var(--rose-mid);
   }
 
-  /* BUDGET CATEGORIES */
-  .budget-cat {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(232,114,138,0.08);
-  }
+  .budget-cat { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(232,114,138,0.08); }
   .budget-cat:last-child { border: none; }
   .budget-cat-icon { font-size: 18px; width: 28px; text-align: center; }
   .budget-cat-name { flex: 1; font-size: 13px; color: var(--text-muted); }
@@ -750,9 +421,67 @@
   .budget-cat-bar-wrap { width: 60px; height: 6px; background: #f0e0e8; border-radius: 3px; overflow: hidden; }
   .budget-cat-bar { height: 100%; border-radius: 3px; background: var(--rose); }
 
-  /* PHOTO URL INPUT */
   input[type="file"] { display: none; }
 
+  /* ── INSPO MODE TABS ── */
+  .inspo-mode-tabs {
+    display: flex;
+    border-bottom: 2px solid rgba(232,114,138,0.12);
+    background: white;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .inspo-mode-btn {
+    flex: 1; padding: 13px 6px;
+    border: none; background: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px; font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .inspo-mode-btn.active { color: var(--rose-deep); border-bottom-color: var(--rose); }
+
+  .inspo-panel { display: none; padding: 16px; }
+  .inspo-panel.active { display: block; }
+
+  .upload-drop-zone {
+    border: 2px dashed var(--rose-mid);
+    border-radius: var(--radius-sm);
+    padding: 28px 16px;
+    text-align: center;
+    cursor: pointer;
+    background: var(--rose-light);
+    transition: all 0.2s;
+  }
+  .upload-drop-zone:hover { border-color: var(--rose); background: #f9d5e6; }
+  .upload-drop-zone.has-file { border-color: var(--sage); background: #f0f7ee; }
+
+  .pinterest-board-card {
+    background: white;
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(230,0,35,0.08);
+    border: 1px solid rgba(230,0,35,0.1);
+    overflow: hidden;
+  }
+  .pinterest-board-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, #E60023, #ad081b);
+    color: white;
+  }
+  .pinterest-board-header .board-title { flex: 1; font-size: 13px; font-weight: 500; }
+  .pinterest-delete-btn {
+    background: rgba(255,255,255,0.2); border: none; color: white;
+    width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+    font-size: 14px; display: flex; align-items: center; justify-content: center;
+  }
+  .pinterest-board-card iframe {
+    display: block; width: 100%; border: none;
+  }
 </style>
 </head>
 <body>
@@ -810,7 +539,6 @@
   <!-- INFO TAB -->
   <div class="tab-content active" id="tab-info">
     <p class="section-title"><span>🌺</span> Detalhes do Evento</p>
-
     <div class="card" style="padding:0;overflow:hidden;">
       <div style="background:linear-gradient(135deg,var(--rose),var(--rose-deep));padding:24px;text-align:center;color:white;">
         <div style="font-size:36px;margin-bottom:8px;">🌸</div>
@@ -851,9 +579,7 @@
         </div>
       </div>
     </div>
-
     <div class="floral-divider">❀ ❀ ❀</div>
-
     <p class="section-title"><span>🎨</span> Paleta de Cores</p>
     <div class="card">
       <p style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">Paleta sugerida para o brunch florido:</p>
@@ -886,7 +612,6 @@
       <p class="section-title" style="margin-bottom:0"><span>🌸</span> Lista de Convidados</p>
       <button class="btn" style="background:var(--rose-light);color:var(--rose-deep);border:1.5px solid var(--rose-mid);font-size:12px;padding:8px 14px;" onclick="exportGuests()">🖨️ Exportar</button>
     </div>
-
     <div class="card">
       <div class="form-group">
         <label>Nome</label>
@@ -904,8 +629,6 @@
       </div>
       <button class="btn btn-primary" onclick="addGuest()">+ Adicionar Convidado</button>
     </div>
-
-    <!-- FILTER -->
     <div style="display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;">
       <button class="tag-opt selected" style="flex-shrink:0" id="f-all" onclick="filterGuests('all')">Todos</button>
       <button class="tag-opt" style="flex-shrink:0" id="f-confirmed" onclick="filterGuests('confirmed')">✅ Confirmados</button>
@@ -917,7 +640,6 @@
       <button class="tag-opt" style="flex-shrink:0" id="f-faculdade" onclick="filterGuests('faculdade')">🎓 Faculdade</button>
       <button class="tag-opt" style="flex-shrink:0" id="f-outros" onclick="filterGuests('outros')">✨ Outros</button>
     </div>
-
     <div id="guest-list"></div>
     <div id="guest-empty" class="empty-state" style="display:none">
       <div class="emoji">🌺</div>
@@ -931,8 +653,6 @@
       <div class="cost-total-label">Total estimado</div>
       <div class="cost-total-value" id="total-display">R$ 0,00</div>
     </div>
-
-    <!-- BUDGET GOAL -->
     <div class="card" style="margin-bottom:16px;">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
         <span style="font-size:13px;font-weight:500;">Meta de orçamento</span>
@@ -944,7 +664,6 @@
       </div>
       <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
     </div>
-
     <p class="section-title"><span>💐</span> Adicionar Gasto</p>
     <div class="card">
       <div class="form-group">
@@ -978,13 +697,10 @@
       </div>
       <button class="btn btn-primary" onclick="addCost()">+ Adicionar Gasto</button>
     </div>
-
-    <!-- CAT BREAKDOWN -->
     <div class="card" id="breakdown-card" style="display:none">
       <p style="font-size:13px;font-weight:500;margin-bottom:12px;color:var(--text-muted);">Por categoria</p>
       <div id="budget-breakdown"></div>
     </div>
-
     <p class="section-title" style="margin-top:4px;"><span>💰</span> Gastos</p>
     <div id="cost-list"></div>
     <div id="cost-empty" class="empty-state" style="display:none">
@@ -996,14 +712,12 @@
   <!-- CHECKLIST TAB -->
   <div class="tab-content" id="tab-checklist">
     <p class="section-title"><span>✅</span> Lista de Tarefas</p>
-
     <div class="card">
       <div style="display:flex;gap:8px;">
         <input type="text" id="task-input" placeholder="Nova tarefa..." style="flex:1;" onkeydown="if(event.key==='Enter')addTask()">
         <button class="btn btn-primary" style="width:auto;padding:10px 18px;" onclick="addTask()">+</button>
       </div>
     </div>
-
     <div id="task-list"></div>
     <div id="task-empty" class="empty-state" style="display:none">
       <div class="emoji">🌼</div>
@@ -1015,7 +729,6 @@
   <div class="tab-content" id="tab-musica">
     <p class="section-title"><span>🎵</span> Playlist do Aniversário</p>
     <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">Cole o link da sua playlist do Spotify e ela vai aparecer aqui para tocar direto! 🎶</p>
-
     <div class="card" style="margin-bottom:16px;">
       <div class="form-group">
         <label>Link da Playlist do Spotify</label>
@@ -1026,28 +739,19 @@
       </div>
       <p style="font-size:11px;color:var(--text-muted);margin-top:-4px;">Cole a URL da playlist, álbum ou música do Spotify</p>
     </div>
-
     <div id="spotify-embed-wrap" style="display:none;margin-bottom:16px;">
       <div style="border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(29,185,84,0.15);">
         <iframe id="spotify-iframe"
-          style="border-radius:var(--radius);"
-          src=""
-          width="100%"
-          height="380"
-          frameBorder="0"
-          allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy">
+          style="border-radius:var(--radius);" src="" width="100%" height="380" frameBorder="0"
+          allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
         </iframe>
       </div>
       <button onclick="clearSpotify()" style="margin-top:10px;background:none;border:1.5px solid var(--rose-mid);color:var(--text-muted);border-radius:var(--radius-sm);padding:8px 16px;font-size:12px;cursor:pointer;width:100%;">✕ Remover playlist</button>
     </div>
-
     <div id="spotify-empty" class="empty-state">
       <div class="emoji">🎧</div>
       <p>Nenhuma playlist adicionada ainda.<br>Cole o link do Spotify acima!</p>
     </div>
-
     <div class="floral-divider">❀ ❀ ❀</div>
     <p class="section-title"><span>💡</span> Dicas de Playlist</p>
     <div class="card">
@@ -1064,30 +768,87 @@
     </div>
   </div>
 
-  <!-- INSPO TAB -->
+  <!-- ══════════════════════════════════════════════════
+       INSPO TAB — 3 modos: link de imagem / upload / Pinterest
+  ══════════════════════════════════════════════════ -->
   <div class="tab-content" id="tab-inspo">
     <p class="section-title"><span>🎨</span> Mural de Inspirações</p>
-    <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">Adicione fotos e links para montar o mood board do seu brunch florido ✨</p>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">Monte o mood board do seu brunch florido ✨</p>
 
-    <div class="card" style="margin-bottom:16px;">
-      <div class="form-group">
-        <label>URL da imagem ou foto</label>
-        <div style="display:flex;gap:8px;">
-          <input type="text" id="img-url" placeholder="https://...imagem.jpg" style="flex:1;">
-          <button class="btn btn-primary" style="width:auto;padding:10px 14px;white-space:nowrap;" onclick="addPhoto()">+ Add</button>
+    <!-- MODO SELECTOR CARD -->
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px;">
+
+      <!-- TABS -->
+      <div class="inspo-mode-tabs">
+        <button class="inspo-mode-btn active" id="imode-url" onclick="switchInspoMode('url')">🔗 Link</button>
+        <button class="inspo-mode-btn" id="imode-upload" onclick="switchInspoMode('upload')">📁 Foto</button>
+        <button class="inspo-mode-btn" id="imode-pinterest" onclick="switchInspoMode('pinterest')">📌 Pinterest</button>
+      </div>
+
+      <!-- PANEL: URL de imagem -->
+      <div class="inspo-panel active" id="inspo-panel-url">
+        <div class="form-group">
+          <label>URL da imagem</label>
+          <div style="display:flex;gap:8px;">
+            <input type="text" id="img-url" placeholder="https://i.pinimg.com/... ou qualquer imagem" style="flex:1;">
+            <button class="btn btn-primary" style="width:auto;padding:10px 14px;white-space:nowrap;" onclick="addPhoto('url')">+ Add</button>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:4px;">
+          <label>Nota (opcional)</label>
+          <input type="text" id="img-note-url" placeholder="Ex: ideia para o bolo, arranjo de flores...">
+        </div>
+        <p style="font-size:11px;color:var(--text-muted);margin-top:6px;">
+          💡 No Pinterest: abra a foto → "..." → <strong>Copiar link da imagem</strong> e cole aqui
+        </p>
+      </div>
+
+      <!-- PANEL: Upload de foto -->
+      <div class="inspo-panel" id="inspo-panel-upload">
+        <div class="upload-drop-zone" id="upload-drop-zone" onclick="document.getElementById('file-upload-input').click()">
+          <div style="font-size:36px;margin-bottom:8px;">📸</div>
+          <p style="font-size:13px;font-weight:500;color:var(--rose-deep);">Toque para escolher uma foto</p>
+          <p style="font-size:11px;color:var(--text-muted);margin-top:4px;">JPG, PNG ou WEBP — máx. 5 MB</p>
+        </div>
+        <input type="file" id="file-upload-input" accept="image/jpeg,image/png,image/webp,image/gif" onchange="handleFileUpload(event)">
+
+        <!-- Preview após selecionar -->
+        <div id="upload-preview-wrap" style="display:none;margin-top:12px;">
+          <img id="upload-preview-img" style="width:100%;border-radius:var(--radius-sm);max-height:220px;object-fit:cover;" src="" alt="preview">
+          <input type="text" id="img-note-upload" placeholder="Nota opcional..." style="margin-top:8px;">
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <button class="btn" style="flex:1;background:#f5f5f5;color:var(--text-muted);border:1px solid #e0e0e0;" onclick="cancelUpload()">✕ Cancelar</button>
+            <button class="btn btn-primary" style="flex:1;" onclick="addPhoto('upload')">✅ Adicionar</button>
+          </div>
         </div>
       </div>
-      <div class="form-group">
-        <label>Nota (opcional)</label>
-        <input type="text" id="img-note" placeholder="Ex: Ideia para o bolo, arranjo de flores...">
+
+      <!-- PANEL: Pinterest board -->
+      <div class="inspo-panel" id="inspo-panel-pinterest">
+        <div class="form-group">
+          <label>Link do painel do Pinterest</label>
+          <div style="display:flex;gap:8px;">
+            <input type="text" id="pinterest-board-url" placeholder="https://br.pinterest.com/usuario/painel/" style="flex:1;">
+            <button class="btn btn-primary" style="width:auto;padding:10px 14px;white-space:nowrap;background:#E60023;border-color:#E60023;" onclick="addPinterestBoard()">📌 Embed</button>
+          </div>
+        </div>
+        <div style="background:linear-gradient(135deg,#fff0f1,#ffe0e3);border-radius:var(--radius-sm);padding:10px 12px;font-size:11px;color:#7a1020;border:1px solid rgba(230,0,35,0.15);">
+          <strong>📌 Como pegar o link do painel:</strong><br>
+          Abra o Pinterest → entre no seu painel de inspirações → copie o link da barra de endereço<br>
+          <span style="opacity:.7;">Ex: br.pinterest.com/seunome/brunch-ideias/</span>
+        </div>
       </div>
     </div>
 
+    <!-- PINTEREST EMBEDS -->
+    <div id="pinterest-embeds"></div>
+
+    <!-- PHOTO GRID -->
     <div class="photo-grid" id="photo-grid"></div>
 
-    <div id="photo-empty" class="empty-state" style="display:none">
+    <div id="photo-empty" class="empty-state">
       <div class="emoji">🌺</div>
-      <p>Adicione fotos de inspiração<br>para montar seu mood board!</p>
+      <p>Adicione fotos ou painéis do Pinterest<br>para montar seu mood board!</p>
     </div>
 
     <div class="floral-divider">❀ ❀ ❀</div>
@@ -1104,20 +865,14 @@
         <span class="inspo-tag">#chadefruta</span>
         <span class="inspo-tag">#gardenparty</span>
       </div>
-
       <div style="margin-top:16px;border-top:1px solid rgba(232,114,138,0.1);padding-top:14px;">
         <p style="font-size:12px;font-weight:500;color:var(--text);margin-bottom:10px;">🌸 Sugestões para o menu</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--text-muted);">
-          <span>🫐 Bowl de açaí</span>
-          <span>🥐 Croissant artesanal</span>
-          <span>🍓 Torta de morango</span>
-          <span>🧇 Waffles com flores</span>
-          <span>🥗 Salada de frutas</span>
-          <span>🍰 Naked cake floral</span>
-          <span>🫖 Chá de flores</span>
-          <span>🥂 Mimosas rosê</span>
-          <span>🍞 Pão de mel</span>
-          <span>☕ Café coado</span>
+          <span>🫐 Bowl de açaí</span><span>🥐 Croissant artesanal</span>
+          <span>🍓 Torta de morango</span><span>🧇 Waffles com flores</span>
+          <span>🥗 Salada de frutas</span><span>🍰 Naked cake floral</span>
+          <span>🫖 Chá de flores</span><span>🥂 Mimosas rosê</span>
+          <span>🍞 Pão de mel</span><span>☕ Café coado</span>
         </div>
       </div>
     </div>
@@ -1148,7 +903,10 @@ const db  = getFirestore(app);
 
 // ── LOCAL STATE ────────────────────────────────────────────────────────
 const INFO = { date:'2026-06-21', time:'16:00', local:'Salão de Festas', addr:'Avenida Hugo Viola, 211', theme:'Brunch Florido' };
-let guests = [], costs = [], tasks = [], photos = [], budgetGoal = 0, spotifyUrl = '';
+let guests = [], costs = [], tasks = [], photos = [], pinterestBoards = [], budgetGoal = 0, spotifyUrl = '';
+
+// Temp state for file upload
+let pendingUploadDataUrl = null;
 
 // ── TABS ──────────────────────────────────────────────────────────────
 window.showTab = function(name) {
@@ -1176,7 +934,7 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-// ── INFO (estático) ────────────────────────────────────────────────────
+// ── INFO ──────────────────────────────────────────────────────────────
 function loadInfo() {
   const i = INFO;
   if (i.date) {
@@ -1204,10 +962,7 @@ window.addGuest = async function() {
   const name = document.getElementById('g-name').value.trim();
   if (!name) { showToast('Digite o nome do convidado 🌸'); return; }
   await addDoc(collection(db, 'guests'), {
-    name,
-    group: getSelectedTag('group-options'),
-    status: 'pending',
-    createdAt: serverTimestamp()
+    name, group: getSelectedTag('group-options'), status: 'pending', createdAt: serverTimestamp()
   });
   document.getElementById('g-name').value = '';
   showToast(name + ' adicionada(o)! 🌸');
@@ -1232,7 +987,7 @@ window.filterGuests = function(f) {
 
 function renderGuests() {
   const list = document.getElementById('guest-list');
-  let gs = [...guests]; // já vem ordenado por createdAt desc do listener
+  let gs = [...guests];
   if (guestFilter === 'confirmed') gs = gs.filter(g => g.status === 'confirmed');
   else if (guestFilter === 'pending') gs = gs.filter(g => g.status === 'pending');
   else if (guestFilter === 'no') gs = gs.filter(g => g.status === 'no');
@@ -1241,8 +996,10 @@ function renderGuests() {
   document.getElementById('guest-empty').style.display = gs.length === 0 ? 'block' : 'none';
   list.innerHTML = gs.map(g => {
     const initials = g.name.split(' ').map(w => w[0]).slice(0,2).join('').toUpperCase();
-    const badge = g.status === 'confirmed' ? '<span class="confirmed-badge badge-yes">✅ Confirmado</span>'
-      : g.status === 'no' ? '<span class="confirmed-badge badge-no">❌ Não vai</span>'
+    const badge = g.status === 'confirmed'
+      ? '<span class="confirmed-badge badge-yes">✅ Confirmado</span>'
+      : g.status === 'no'
+      ? '<span class="confirmed-badge badge-no">❌ Não vai</span>'
       : '<span class="confirmed-badge badge-pending">⏳ Aguardando</span>';
     const groupLabel = {amigos:'👥 Amigos',familia:'❤️ Família',trabalho:'💼 Trabalho',faculdade:'🎓 Faculdade',outros:'✨ Outros'}[g.group] || g.group;
     return `<div class="guest-card">
@@ -1266,34 +1023,18 @@ window.exportGuests = function() {
   const allGuests = [...guests].sort((a,b) => a.name.localeCompare(b.name, 'pt-BR'));
   const groupLabel = {amigos:'Amigos',familia:'Família',trabalho:'Trabalho',faculdade:'Faculdade',outros:'Outros'};
   const eventDate = new Date(INFO.date + 'T12:00:00').toLocaleDateString('pt-BR', {day:'numeric',month:'long',year:'numeric'});
-  const rows = allGuests.map((g, i) => `
-    <tr>
-      <td style="text-align:center;width:36px;">${i+1}</td>
-      <td>${g.name}</td>
-      <td style="text-align:center;color:#888;font-size:12px;">${groupLabel[g.group] || g.group}</td>
-      <td style="text-align:center;width:60px;"><span style="display:inline-block;width:22px;height:22px;border:2px solid #ccc;border-radius:4px;"></span></td>
-    </tr>`).join('');
+  const rows = allGuests.map((g, i) => `<tr>
+    <td style="text-align:center;width:36px;">${i+1}</td>
+    <td>${g.name}</td>
+    <td style="text-align:center;color:#888;font-size:12px;">${groupLabel[g.group] || g.group}</td>
+    <td style="text-align:center;width:60px;"><span style="display:inline-block;width:22px;height:22px;border:2px solid #ccc;border-radius:4px;"></span></td>
+  </tr>`).join('');
   const html = `<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Lista de Convidados</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
-  *{box-sizing:border-box;margin:0;padding:0}body{font-family:'DM Sans',sans-serif;padding:32px 40px;color:#3a2a2e;max-width:700px;margin:0 auto}
-  .header{text-align:center;margin-bottom:28px;border-bottom:2px solid #f2c4d4;padding-bottom:20px}
-  .header h1{font-family:'Playfair Display',serif;font-size:26px;color:#c44e6a}.header p{font-size:13px;color:#8a7278;margin-top:4px}
-  .meta{display:flex;justify-content:center;gap:24px;margin-top:12px;font-size:12px;color:#8a7278}
-  table{width:100%;border-collapse:collapse;margin-top:8px}thead tr{background:#fce8f0}
-  th{padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#c44e6a;font-weight:600}
-  th:last-child,td:last-child{text-align:center}
-  td{padding:10px 12px;font-size:14px;border-bottom:1px solid #f5e0e8;vertical-align:middle}
-  tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:#fdf8f0}
-  .footer{margin-top:28px;text-align:center;font-size:11px;color:#b0909a}
-  @media print{body{padding:16px 24px}}
-</style></head><body>
+<style>@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');*{box-sizing:border-box;margin:0;padding:0}body{font-family:'DM Sans',sans-serif;padding:32px 40px;color:#3a2a2e;max-width:700px;margin:0 auto}.header{text-align:center;margin-bottom:28px;border-bottom:2px solid #f2c4d4;padding-bottom:20px}.header h1{font-family:'Playfair Display',serif;font-size:26px;color:#c44e6a}.header p{font-size:13px;color:#8a7278;margin-top:4px}.meta{display:flex;justify-content:center;gap:24px;margin-top:12px;font-size:12px;color:#8a7278}table{width:100%;border-collapse:collapse;margin-top:8px}thead tr{background:#fce8f0}th{padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#c44e6a;font-weight:600}td{padding:10px 12px;font-size:14px;border-bottom:1px solid #f5e0e8;vertical-align:middle}tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:#fdf8f0}.footer{margin-top:28px;text-align:center;font-size:11px;color:#b0909a}</style></head><body>
 <div class="header"><h1>🌸 Lista de Convidados</h1><p>Brunch de Aniversário de 23 Anos</p>
 <div class="meta"><span>🗓 ${eventDate}</span><span>📍 ${INFO.local} — ${INFO.addr}</span><span>👥 ${allGuests.length} convidados</span></div></div>
-<table><thead><tr><th>#</th><th>Nome</th><th style="text-align:center">Grupo</th><th style="text-align:center">✓ Presente</th></tr></thead>
-<tbody>${rows}</tbody></table>
-<div class="footer">Lista gerada em ${new Date().toLocaleDateString('pt-BR')} · Meu Brunch de 23 Anos 🌸</div>
-</body></html>`;
+<table><thead><tr><th>#</th><th>Nome</th><th style="text-align:center">Grupo</th><th style="text-align:center">✓ Presente</th></tr></thead><tbody>${rows}</tbody></table>
+<div class="footer">Lista gerada em ${new Date().toLocaleDateString('pt-BR')} · Meu Brunch de 23 Anos 🌸</div></body></html>`;
   const win = window.open('', '_blank');
   win.document.write(html);
   win.document.close();
@@ -1341,7 +1082,9 @@ function renderBudgetProgress() {
   document.getElementById('prog-spent').textContent = 'R$ ' + total.toFixed(2);
   document.getElementById('prog-goal').textContent = budgetGoal > 0 ? 'R$ ' + budgetGoal.toFixed(2) : 'Não definida';
   document.getElementById('prog-fill').style.width = pct + '%';
-  document.getElementById('prog-fill').style.background = pct > 90 ? 'linear-gradient(90deg,#e65100,#c44e6a)' : 'linear-gradient(90deg,var(--rose),var(--rose-deep))';
+  document.getElementById('prog-fill').style.background = pct > 90
+    ? 'linear-gradient(90deg,#e65100,#c44e6a)'
+    : 'linear-gradient(90deg,var(--rose),var(--rose-deep))';
 }
 
 function renderCosts() {
@@ -1412,33 +1155,6 @@ function renderTasks() {
     </div>`).join('');
 }
 
-// ── PHOTOS ────────────────────────────────────────────────────────────
-window.addPhoto = async function() {
-  const url  = document.getElementById('img-url').value.trim();
-  const note = document.getElementById('img-note').value.trim();
-  if (!url) { showToast('Cole a URL de uma imagem 🌸'); return; }
-  await addDoc(collection(db, 'photos'), { url, note, createdAt: serverTimestamp() });
-  document.getElementById('img-url').value  = '';
-  document.getElementById('img-note').value = '';
-  showToast('Inspiração adicionada! 🌺');
-};
-
-window.deletePhoto = async function(id) {
-  await deleteDoc(doc(db, 'photos', id));
-};
-
-function renderPhotos() {
-  document.getElementById('photo-empty').style.display = photos.length === 0 ? 'block' : 'none';
-  document.getElementById('photo-grid').innerHTML = photos.map(p => `
-    <div class="photo-item has-photo">
-      <img src="${p.url}" onerror="this.parentElement.innerHTML='<div style=\\'padding:12px;font-size:11px;color:var(--text-muted);text-align:center;\\'>Imagem não encontrada</div>'">
-      <div class="photo-overlay">
-        <span class="photo-note">${p.note||''}</span>
-        <button class="photo-delete-btn" onclick="deletePhoto('${p.id}')">✕</button>
-      </div>
-    </div>`).join('');
-}
-
 // ── STATS ─────────────────────────────────────────────────────────────
 function updateStats() {
   document.getElementById('stat-total').textContent = guests.length;
@@ -1472,7 +1188,152 @@ window.clearSpotify = async function() {
   await setDoc(doc(db, 'meta', 'config'), { spotifyUrl: '' }, { merge: true });
 };
 
-// ── REALTIME LISTENERS ─────────────────────────────────────────────────
+window.saveSpotify = function() {};
+
+// ══════════════════════════════════════════════════════════════
+// INSPIRAÇÕES — 3 modos
+// ══════════════════════════════════════════════════════════════
+
+// ── Trocar modo (URL / Upload / Pinterest) ────────────────────
+window.switchInspoMode = function(mode) {
+  ['url','upload','pinterest'].forEach(m => {
+    document.getElementById('imode-' + m).classList.toggle('active', m === mode);
+    document.getElementById('inspo-panel-' + m).classList.toggle('active', m === mode);
+  });
+};
+
+// ── MODO 1: URL de imagem ─────────────────────────────────────
+window.addPhoto = async function(mode) {
+  mode = mode || 'url';
+  let url = '', note = '';
+
+  if (mode === 'url') {
+    url  = document.getElementById('img-url').value.trim();
+    note = document.getElementById('img-note-url').value.trim();
+    if (!url) { showToast('Cole a URL de uma imagem 🌸'); return; }
+    document.getElementById('img-url').value  = '';
+    document.getElementById('img-note-url').value = '';
+
+  } else if (mode === 'upload') {
+    if (!pendingUploadDataUrl) { showToast('Escolha uma foto primeiro 📸'); return; }
+    url  = pendingUploadDataUrl;
+    note = document.getElementById('img-note-upload').value.trim();
+    cancelUpload(); // limpa preview
+  }
+
+  await addDoc(collection(db, 'photos'), { url, note, createdAt: serverTimestamp() });
+  showToast('Inspiração adicionada! 🌺');
+};
+
+// ── MODO 2: Upload de arquivo ─────────────────────────────────
+window.handleFileUpload = function(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  if (file.size > 5 * 1024 * 1024) {
+    showToast('Foto muito grande! Máximo 5 MB 📸');
+    event.target.value = '';
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    pendingUploadDataUrl = e.target.result;
+    document.getElementById('upload-preview-img').src = pendingUploadDataUrl;
+    document.getElementById('upload-preview-wrap').style.display = 'block';
+    document.getElementById('upload-drop-zone').style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+  event.target.value = ''; // reset so same file can be re-selected
+};
+
+window.cancelUpload = function() {
+  pendingUploadDataUrl = null;
+  document.getElementById('upload-preview-img').src = '';
+  document.getElementById('img-note-upload').value = '';
+  document.getElementById('upload-preview-wrap').style.display = 'none';
+  document.getElementById('upload-drop-zone').style.display = 'block';
+};
+
+// ── MODO 3: Pinterest board embed ─────────────────────────────
+window.addPinterestBoard = async function() {
+  let rawUrl = document.getElementById('pinterest-board-url').value.trim();
+  if (!rawUrl) { showToast('Cole o link do painel do Pinterest 📌'); return; }
+
+  // Aceita formatos: br.pinterest.com/user/board/ ou pinterest.com/user/board/
+  // Extrai user/board da URL
+  const match = rawUrl.match(/pinterest\.com\/([^/?#]+)\/([^/?#]+)/i);
+  if (!match) {
+    showToast('Link do Pinterest inválido. Ex: pinterest.com/usuario/painel/'); return;
+  }
+
+  const user  = match[1];
+  const board = match[2];
+
+  // Evitar duplicatas
+  if (pinterestBoards.find(b => b.user === user && b.board === board)) {
+    showToast('Este painel já foi adicionado 📌'); return;
+  }
+
+  await addDoc(collection(db, 'pinterest_boards'), {
+    user, board,
+    label: `${user} / ${board}`,
+    createdAt: serverTimestamp()
+  });
+
+  document.getElementById('pinterest-board-url').value = '';
+  showToast('Painel do Pinterest adicionado! 📌');
+};
+
+window.deletePinterestBoard = async function(id) {
+  await deleteDoc(doc(db, 'pinterest_boards', id));
+};
+
+function renderPinterestBoards() {
+  const wrap = document.getElementById('pinterest-embeds');
+  wrap.innerHTML = pinterestBoards.map(b => {
+    const embedUrl = `https://assets.pinterest.com/ext/embed.html?board=${encodeURIComponent(b.user)}%2F${encodeURIComponent(b.board)}&locale=pt_BR`;
+    return `<div class="pinterest-board-card">
+      <div class="pinterest-board-header">
+        <span style="font-size:20px;">📌</span>
+        <span class="board-title">${b.label || b.user + ' / ' + b.board}</span>
+        <button class="pinterest-delete-btn" onclick="deletePinterestBoard('${b.id}')" title="Remover painel">✕</button>
+      </div>
+      <iframe
+        src="${embedUrl}"
+        height="320"
+        scrolling="no"
+        frameborder="0"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox">
+      </iframe>
+    </div>`;
+  }).join('');
+  updatePhotoEmpty();
+}
+
+// ── PHOTOS (grid) ─────────────────────────────────────────────
+window.deletePhoto = async function(id) {
+  await deleteDoc(doc(db, 'photos', id));
+};
+
+function updatePhotoEmpty() {
+  const hasContent = photos.length > 0 || pinterestBoards.length > 0;
+  document.getElementById('photo-empty').style.display = hasContent ? 'none' : 'block';
+}
+
+function renderPhotos() {
+  document.getElementById('photo-grid').innerHTML = photos.map(p => `
+    <div class="photo-item has-photo">
+      <img src="${p.url}" onerror="this.parentElement.innerHTML='<div style=\\'padding:12px;font-size:11px;color:var(--text-muted);text-align:center;word-break:break-all;\\'>Imagem não encontrada</div>'">
+      <div class="photo-overlay">
+        <span class="photo-note">${p.note||''}</span>
+        <button class="photo-delete-btn" onclick="deletePhoto('${p.id}')">✕</button>
+      </div>
+    </div>`).join('');
+  updatePhotoEmpty();
+}
+
+// ── REALTIME LISTENERS ─────────────────────────────────────────
 onSnapshot(query(collection(db, 'guests'), orderBy('createdAt', 'desc')), snap => {
   guests = snap.docs.map(d => ({ id: d.id, ...d.data() }));
   renderGuests();
@@ -1493,6 +1354,11 @@ onSnapshot(query(collection(db, 'photos'), orderBy('createdAt', 'asc')), snap =>
   renderPhotos();
 });
 
+onSnapshot(query(collection(db, 'pinterest_boards'), orderBy('createdAt', 'asc')), snap => {
+  pinterestBoards = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderPinterestBoards();
+});
+
 onSnapshot(doc(db, 'meta', 'config'), snap => {
   if (!snap.exists()) return;
   const cfg = snap.data();
@@ -1511,7 +1377,7 @@ onSnapshot(doc(db, 'meta', 'config'), snap => {
   }
 });
 
-// ── INIT ──────────────────────────────────────────────────────────────
+// ── INIT ──────────────────────────────────────────────────────
 loadInfo();
 </script>
 
